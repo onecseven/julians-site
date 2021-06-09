@@ -30,6 +30,10 @@ module.exports = (env, argv) => {
         {
           test: /\.scss$/,
           use: ["style-loader", "css-loader", "sass-loader",],
+        },
+        {
+          test: /\.(png|jpg)$/,
+          loader: 'url-loader'
         }
       ],      
     },
