@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App.jsx';
+import App from './App'
 
 const body = document.getElementsByTagName('BODY')[0];
 const root = document.createElement('div');
