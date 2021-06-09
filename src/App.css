@@ -1,4 +1,6 @@
-.App {
+body {
   margin: 1rem;
   text-align: center;
+  background-image: url("../public/Background2.jpg");
+  background-size: cover;
 }
