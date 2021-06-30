@@ -1,9 +1,10 @@
 import React, { Component } from "react"
 import { hot } from "react-hot-loader"
 import { Provider } from "react-redux"
+import { Navbar } from "./components/Navbar"
 import store from "./store"
 import "./App.css"
-import { Navbar } from "./components/Navbar"
+
 class App extends Component {
   render() {
     return (
