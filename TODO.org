@@ -1,5 +1,0 @@
-* JULIAN'S SITE
-** NEXT Add React Router and read up on routes
-** DONE Find the menu bar reference. (email) We wanta fixed bar on top that becomes horizontal on mobile
-** TODO Analytics
-** TODO Square Scheduling
