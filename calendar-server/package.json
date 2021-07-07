@@ -1,0 +1,10 @@
+{
+  "name": "julians-site-calendar",
+  "version": "0.0.1",
+  "description": "comission for a site",
+  "main": "server.js",
+  "dependencies": {
+    "@types/mongodb": "^3.6.20",
+    "mongodb": "^3.6.10"
+  }
+}
