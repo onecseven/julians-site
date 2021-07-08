@@ -8,7 +8,7 @@
 *** 1d. Send notifications to the user (reminder, optional) via SMS or email.
 *** 1e. (research) Maybe link the whole DB to the google calendar.
 ** 2. mongo database
-*** 2a. Figure out a way to represent appointments and time (timezones?).
+*** DONE 2a. Figure out a way to represent appointments and time (timezones?).
 **** name of the client
 **** client email
 **** type of meeting (check with julian)
