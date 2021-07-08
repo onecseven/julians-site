@@ -5,6 +5,9 @@
   "main": "server.js",
   "dependencies": {
     "@types/mongodb": "^3.6.20",
-    "mongodb": "^3.6.10"
+    "@types/mongoose": "^5.11.97",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.10",
+    "mongoose": "^5.11.12"
   }
 }
