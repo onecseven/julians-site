@@ -2,11 +2,11 @@
 ** Objective: server that books appointments for Julian's website.
 ** Features we want:
 ** 1. express server
-*** 1a. GET endpoint that gets which days are NOT available
-*** 1b. POST endpoint that writes to DB when an appointment is booked
-*** 1c. Send notifications to julian (immediately).
-*** 1d. Send notifications to the user (reminder, optional) via SMS or email.
-*** 1e. (research) Maybe link the whole DB to the google calendar.
+*** DONE 1a. GET endpoint that gets which days are NOT available
+*** DONE 1b. POST endpoint that writes to DB when an appointment is booked
+*** TODO 1c. Send notifications to julian (immediately).
+*** TODO 1d. Send notifications to the user (reminder, optional) via SMS or email.
+*** TODO 1e. (research) Maybe link the whole DB to the google calendar.
 ** 2. mongo database
 *** DONE 2a. Figure out a way to represent appointments and time (timezones?).
 **** name of the client
