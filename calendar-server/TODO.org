@@ -17,5 +17,12 @@
 ** 3. Research topics:
 *** 3a. TODO twilio
 *** 3b. TODO google calendar API
-*** 3c. TODO how to email?
+*** 3c. DONE how to email?
 *** 3d. TODO functions for timezone changing from unix time to others
+*** 3e. TODO Figure out the flow of the app from the front end to the back end. ( or backwards I guess )
+** 4. email
+*** DONE 4a. Email configured and working
+*** TODO 4b. Get reservation template from belb
+*** TODO 4c. Figure out if it's possible to tie into google calendar API
+*** TODO 4d. Figure out a good structure -- we probably want to output two different memoized
+functions, one for reservation requests and one for julian's approval thing in particular. 
