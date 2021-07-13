@@ -3,10 +3,13 @@
 ** Features we want:
 ** 1. express server
 *** DONE 1a. GET endpoint that gets which days are NOT available
-*** DONE 1b. POST endpoint that writes to DB when an appointment is booked
-*** TODO 1c. Send notifications to julian (immediately).
-*** TODO 1d. Send notifications to the user (reminder, optional) via SMS or email.
-*** TODO 1e. (research) Maybe link the whole DB to the google calendar.
+*** TODO 1b. POST endpoint that writes to DB when an appointment is booked
+**** TODO 1c. Send notifications to julian (from the same endpoint).  
+***** TODO 1c[1] Create a function that takes in data from the POST input and sends Julian an email with two links, one for confirm and one for deny. 
+***** TODO 1c[2] Create endpoints that julian will be able to access to deny/confirm reservations
+***** TODO 1c[3] Create a function that creates an email object for the user's reservation confirm, which will be triggered on confirm.
+***** TODO 1c[4] Create a function that creates an event and invites both Julian and the client, which will be triggered on confirm.
+***** TODO 1c[4] Create a function that deletes an appointment from the DB, which will be triggered on decline of the reservation.
 ** 2. mongo database
 *** DONE 2a. Figure out a way to represent appointments and time (timezones?).
 **** name of the client
@@ -16,13 +19,13 @@
 **** time in unix time probably
 ** 3. Research topics:
 *** 3a. TODO twilio
-*** 3b. TODO google calendar API
+*** 3b. DONE google calendar API
 *** 3c. DONE how to email?
 *** 3d. TODO functions for timezone changing from unix time to others
 *** 3e. TODO Figure out the flow of the app from the front end to the back end. ( or backwards I guess )
 ** 4. email
 *** DONE 4a. Email configured and working
 *** TODO 4b. Get reservation template from belb
-*** TODO 4c. Figure out if it's possible to tie into google calendar API
+*** DONE 4c. Figure out if it's possible to tie into google calendar API
 *** TODO 4d. Figure out a good structure -- we probably want to output two different memoized
 functions, one for reservation requests and one for julian's approval thing in particular. 
