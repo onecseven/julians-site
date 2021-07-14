@@ -6,3 +6,5 @@
 **** TODO iframe:
 <!-- Start Square Appointments Embed Code --><script src='https://square.site/appointments/buyer/widget/ipoi8d8a60eewy/L5Y42JD9VY9ED.js'></script><!-- End Square Appointments Embed Code -->
 ** TODO install react-hook-form
+** TODO Form to make reservations:
+*** TODO Show times in user's local time, POST them in UTC.
