@@ -1,6 +1,6 @@
 const express = require("express")
 const mongoose = require("mongoose")
-const CalendarRouter = require("./db/routes/CalendarRoutes.js");
+const CalendarRouter = require("./routes/CalendarRoutes.js");
 const {user, password} = require("./auth/db")
 
 const app = express()
