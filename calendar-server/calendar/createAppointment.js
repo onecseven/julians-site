@@ -5,8 +5,6 @@ const token = require("../auth/token.json")
 const credentials = require("../auth/credentials.json")
 const SCOPES = ["https://www.googleapis.com/auth/calendar"]
 
-authorize(credentials, listEvents)
-
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
  * given callback function.
@@ -20,12 +18,13 @@ function authorize(credentials, callback) {
     client_secret,
     redirect_uris[0]
   )
-  oAuth2Client.setCredentials(JSON.parse(token))
+  oAuth2Client.setCredentials(token)
   
   callback(oAuth2Client)
 }
 
 let memoizedInsertEvents = (event) => (auth) => {
+  console.log(event)
   const calendar = google.calendar({ version: "v3", auth })
   calendar.events.insert({
     auth: auth,
@@ -36,7 +35,7 @@ let memoizedInsertEvents = (event) => (auth) => {
       console.log('There was an error contacting the Calendar service: ' + err);
       return;
     }
-    console.log('Event created: %s', event.htmlLink);
+    console.log('Event created: %s', event.data.htmlLink);
   });
 }
 
