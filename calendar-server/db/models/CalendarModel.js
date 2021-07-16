@@ -17,7 +17,11 @@ const mongoose = require("mongoose");
 // });
 
 const CalendarSchema = new mongoose.Schema({
-  clientName: {
+  clientFirstName: {
+    type: String,
+    required: true,
+  },
+  clientLastName: {
     type: String,
     required: true,
   },
