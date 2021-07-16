@@ -13,18 +13,19 @@ app.get("/appointments", async (request, response) => {
   }
 })
 
-/** req.body should be modelled the following: *
- * {
- *   clientName: string
- *   clientEmail: string
- *   meetingType: string
- *   date: Date (in Unix time)
- * }
- *
- * */
 
+/** Accepts a req.body formatted this way:
+ * {
+ * clientFirstName: string
+ * clientLastName: string
+ * clientEmail: string 
+ * meetingType: "ENERGY" || "YOGA"
+ * meetingDuration: number (should be minutes) 30 || 50 || 60
+ * date: Date.toISOString
+ * }
+  */
 app.post("/appointments", async (request, response) => {
-  let {clientName, clientEmail, meetingType, date} = request.body
+  let {clientFirstName, clientLastName, clientEmail, meetingType, date} = request.body
   const reservation = new CalendarModel({
     clientName,
     clientEmail,
