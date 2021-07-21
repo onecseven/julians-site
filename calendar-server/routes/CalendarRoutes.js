@@ -1,7 +1,10 @@
 const express = require("express")
+const { bookAppointment } = require("../calendar/calendar-exports")
 const CalendarModel = require("../db/models/CalendarModel")
 const { smtp } = require("../email/emailer")
 const { requestApprovalEmail } = require("../email/RequestApproval")
+const { confirmationTemplate } = require("../email/reservation-confirmed-template-client")
+const {meetingTypeGenerator} = require("../utils/meetingTypes")
 const app = express()
 
 app.get("/appointments", async (request, response) => {
@@ -25,12 +28,14 @@ app.get("/appointments", async (request, response) => {
  * }
   */
 app.post("/appointments", async (request, response) => {
-  let {clientFirstName, clientLastName, clientEmail, meetingType, date} = request.body
+  let {clientFirstName, clientLastName, clientEmail, meetingType, meetingDuration, date} = request.body
+  let decoratedMeetingType = meetingTypeGenerator({name: meetingType, duration: meetingDuration})
   const reservation = new CalendarModel({
-    clientName,
+    clientFirstName,
+    clientLastName,
     clientEmail,
-    meetingType,
-    date: new Date(date).setFullYear(new Date().getFullYear())
+    meetingType: decoratedMeetingType,
+    date: new Date(date)
   })
 
   let email = requestApprovalEmail(reservation)
@@ -45,13 +50,32 @@ app.post("/appointments", async (request, response) => {
 
 })
 
-app.get("/appointment/:id/confirm", async (request, response) => {
-  //TODO SEND EMAIL CONF TO CLIENT
-  //TODO SEND GOOGLE CALENDAR INVITE TO CLIENT  
+app.get("/test/:id", async (request, response) => {
+  let { id } = request.params
+  try {
+    const appointment = await CalendarModel.findById(request.params.id)
+    console.log(appointment.meetingType)
+  } catch (e) {
+    console.error(e)
+    console.log('wtf')
+  }
+})
+
+app.get("/appointments/:id/confirm", async (request, response) => {
   let { id } = request.params
   try {
     const appointment = await CalendarModel.findById(request.params.id)
     if (!appointment) response.status(404).send("No item found")
+    const {clientEmail, clientFirstName, clientLastName, meetingType, date} = appointment
+    let confirmationEmail = confirmationTemplate({
+      clientEmail,
+      clientFirstName,
+      clientLastName,
+      meetingType,
+      date
+    })
+    smtp.sendMail(confirmationEmail)
+    bookAppointment({meetingType, clientEmail, date})
     response.status(200).send()
   } catch (error) {
     response.status(500).send(error)
