@@ -4,12 +4,14 @@
 ** 1. express server
 *** DONE 1a. GET endpoint that gets which days are NOT available
 *** TODO 1b. POST endpoint that writes to DB when an appointment is booked
-**** TODO 1c. Send notifications to julian (from the same endpoint).  
-***** TODO 1c[1] Create a function that takes in data from the POST input and sends Julian an email with two links, one for confirm and one for deny. 
-***** TODO 1c[2] Create endpoints that julian will be able to access to deny/confirm reservations
-***** TODO 1c[3] Create a function that creates an email object for the user's reservation confirm, which will be triggered on confirm.
-***** TODO 1c[4] Create a function that creates an event and invites both Julian and the client, which will be triggered on confirm.
-***** TODO 1c[4] Create a function that deletes an appointment from the DB, which will be triggered on decline of the reservation.
+**** DONE 1c. Send notifications to julian (from the same endpoint).  
+***** DONE 1c[1] Create a function that takes in data from the POST input and sends Julian an email with two links, one for confirm and one for deny. 
+***** DONE 1c[2] Create endpoints that julian will be able to access to deny/confirm reservations
+***** DONE 1c[3] Create a function that creates an email object for the user's reservation confirm, which will be triggered on confirm.
+      confirmationEmail
+***** DONE 1c[4] Create a function that creates an event and invites both Julian and the client, which will be triggered on confirm.
+      bookAppointments
+***** DONE 1c[4] Create a function that deletes an appointment from the DB, which will be triggered on decline of the reservation.
 ** 2. mongo database
 *** DONE 2a. Figure out a way to represent appointments and time (timezones?).
 **** name of the client
