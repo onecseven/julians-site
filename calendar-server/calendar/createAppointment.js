@@ -27,12 +27,15 @@ let memoizedInsertEvents = (event) => (auth) => {
   console.log(event)
   const calendar = google.calendar({ version: "v3", auth })
   calendar.events.insert({
+    sendNotifications: true,
+
     auth: auth,
     calendarId: 'primary',
     resource: event,
-  }, function(err, event) {
+  }, async function(err, event) {
     if (err) {
       console.log('There was an error contacting the Calendar service: ' + err);
+      calendar.events.insert({auth, calerdarId: 'primary', resource: event, sendNotifications: true})
       return;
     }
     console.log('Event created: %s', event.data.htmlLink);
