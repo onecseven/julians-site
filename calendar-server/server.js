@@ -18,6 +18,9 @@ mongoose.connect(
 
 app.use(CalendarRouter);
 
-app.listen(3000, () => {
+const server = app.listen(3000, () => {
   console.log("Server is running...")
 })
+
+server.keepAliveTimeout = 61 * 1000;
+
