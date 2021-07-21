@@ -18,7 +18,7 @@ exports.requestApprovalEmail = ({clientEmail, clientName, date, meetingType, _id
     text: `
     Hi, Julian
     
-    A reservation attempt has been made by ${clientName}, ${clientEmail} at the following date ${date.toString()}, for the purpose of ${meetingType}
+    A reservation attempt has been made by ${clientName}, ${clientEmail} at the following date ${date.toString()}, for the purpose of ${meetingType.toString}
     
     CONFIRM: https://localhost:3000/appointment/${_id}/confirm
     DECLINE: https://localhost:3000/appointment/${_id}/decline

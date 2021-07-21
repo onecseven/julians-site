@@ -30,7 +30,10 @@ const CalendarSchema = new mongoose.Schema({
     required: true
   },
   meetingType: {
-    type: String,
+    type: {
+      name: String,
+      duration: Number
+    },
     required: true
   },
   date: {
