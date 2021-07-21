@@ -1,14 +1,22 @@
+
+/**
+ * 
+ * @param {meetingType} meetingType 
+ * @param {date} Date
+ * @param {clientEmail} String
+ * @returns 
+ */
 exports.calendarEventFactory = ({ meetingType, date, clientEmail }) => {
   return {
-    summary: meetingType,
-    location: "800 Howard St., San Francisco, CA 94103",
+    summary: meetingType.toString,
+    location: "",
     description: "",
     start: {
-      dateTime: new Date().toISOString(),
+      dateTime: date.toISOString(),
       timeZone: "America/Los_Angeles",
     },
     end: {
-      dateTime: new Date(date.getTime() + 20 * 60000).toISOString(), //20 minute meeting / switch on meeting types
+      dateTime: new Date(date.getTime() + meetingType.duration * 60000).toISOString(), //this is why duration is minutes!!
       timeZone: "America/Los_Angeles",
     },
     attendees: [{ email: clientEmail }],
