@@ -1,16 +1,17 @@
 #!/usr/bin/env node
-const colors = require("colors")
 
 const inquirer = require("inquirer")
-const {meetingTypes} = require("./constants")
 inquirer.registerPrompt('datetime', require('inquirer-datepicker-prompt'))
 const template = require("../email/reservation-confirmed-template-client")
+const { meetingTypeGenerator, meetingTypes} = require("../utils/meetingTypes")
+const fs = require('fs');
+
 const questions = [
   {
     type: "list",
-    name: "type",
+    name: "duration",
     message: "Choose meeting type",
-    choices: meetingTypes.map(type => type.toString()),
+    choices: [60,50,30],
   },
   {
     type: "input",
@@ -38,14 +39,25 @@ const questions = [
 ]
 
 inquirer.prompt(questions).then(function (answers) {
-  return console.log(template.confirmationTemplate({
-      clientEmail: answers.clientEmail,
-      clientFirstName: answers.clientFirstName,
-      clientLastName: answers.clientLastName,
-      meetingType: answers.type,
-      meetingDuration: answers.type.meetingDuration,
-      date: answers.date
-  }))
+  fs.writeFile("./json.json", JSON.stringify({
+    clientEmail: answers.clientEmail,
+    clientFirstName: answers.clientFirstName,
+    clientLastName: answers.clientLastName,
+    meetingType: meetingTypeGenerator({duration: answers.duration}),
+    date: answers.date
+}), (err) => {
+    if (err) return console.error(err);
+    console.log('Token stored');
+  });
+
+  // return console.log(template.confirmationTemplate({
+  //     clientEmail: answers.clientEmail,
+  //     clientFirstName: answers.clientFirstName,
+  //     clientLastName: answers.clientLastName,
+  //     meetingType: meetingTypeGenerator({duration: answers.duration}),
+  //     date: answers.date
+  // }))
+  // fs
 })
 
 // // export function to list coffee

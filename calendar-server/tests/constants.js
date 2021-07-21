@@ -31,11 +31,3 @@ exports.meetingTypes = meetingTypes.map((type) => {
   }
   return type
 });
-
-
-// served in
-exports.servedIn = [
-  "Mug",
-  "Cup",
-  "Takeway package"
-];
