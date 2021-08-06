@@ -11,6 +11,7 @@ const SCOPES = ["https://www.googleapis.com/auth/calendar"]
  * @param {Object} credentials The authorization client credentials.
  * @param {function} callback The callback to call with the authorized client.
  */
+
 function authorize(credentials, callback) {
   const { client_secret, client_id, redirect_uris } = credentials.installed
   const oAuth2Client = new google.auth.OAuth2(
@@ -42,9 +43,9 @@ let memoizedInsertEvents = (event) => (auth) => {
   });
 }
 
-let insertEvent = (event) => {
+let createAppointment = (event) => {
   let memoizedInsertEvent = memoizedInsertEvents(event)
   authorize(credentials, memoizedInsertEvent)
 }
 
-exports.createAppointment = insertEvent
+exports.createAppointment = createAppointment

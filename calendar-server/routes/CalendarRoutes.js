@@ -3,7 +3,7 @@ const { bookAppointment } = require("../calendar/calendar-exports")
 const CalendarModel = require("../db/models/CalendarModel")
 const { smtp } = require("../email/emailer")
 const { requestApprovalEmail } = require("../email/RequestApproval")
-const { confirmationTemplate } = require("../email/reservation-confirmed-template-client")
+const { createConfirmationTemplate } = require("../email/reservation-confirmed-template-client")
 const {meetingTypeGenerator} = require("../utils/meetingTypes")
 const app = express()
 
@@ -64,10 +64,10 @@ app.get("/test/:id", async (request, response) => {
 app.get("/appointments/:id/confirm", async (request, response) => {
   let { id } = request.params
   try {
-    const appointment = await CalendarModel.findById(request.params.id)
+    const appointment = await CalendarModel.findById(id)
     if (!appointment) response.status(404).send("No item found")
     const {clientEmail, clientFirstName, clientLastName, meetingType, date} = appointment
-    let confirmationEmail = confirmationTemplate({
+    let confirmationEmail = createConfirmationTemplate({
       clientEmail,
       clientFirstName,
       clientLastName,
