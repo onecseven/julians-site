@@ -15,7 +15,7 @@ const YOGA = "Yoga for Embodiment and Transformation"
  * reservation has been notes and taken.
  */
 
-exports.confirmationTemplate = ({clientEmail, clientFirstName,clientLastName, meetingType, date, meetingDuration}) => {
+exports.createConfirmationTemplate = ({clientEmail, clientFirstName,clientLastName, meetingType, date, meetingDuration}) => {
   //need to switch on meeting type refere to doc
   return {
     from: user,
