@@ -1,6 +1,9 @@
 * JULIAN'S SITE
 ** NEXT Add React Router and read up on routes
-** DONE Find the menu bar reference. (email) We wanta fixed bar on top that becomes horizontal on mobile
+*** READ A REACT-ROUTER GETTING STARTED GUIDE
+*** CREATE ROUTE FOR ABOUT
+*** CREATE ROUTE FOR CONTACT
+*** CREATE ROUTE FOR BOOK
 ** TODO install react-hook-form
 ** TODO Form to make reservations:
   - Need a calendar component.
@@ -8,3 +11,4 @@
   - Then the user chooses a time (shown in buttons, localized for them) and then we send a POST appointments API call
 ** TODO Analytics
 *** TODO Show times in user's local time, POST them in UTC. 
+** DONE Find the menu bar reference. (email) We wanta fixed bar on top that becomes horizontal on mobile
