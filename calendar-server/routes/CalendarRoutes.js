@@ -6,7 +6,12 @@ const { requestApprovalEmail } = require("../email/RequestApproval")
 const { createConfirmationTemplate } = require("../email/reservation-confirmed-template-client")
 const {meetingTypeGenerator} = require("../utils/meetingTypes")
 const app = express()
-
+/*
+TODO:
+- MAKE A ROUTE FOR /appointments/ondate
+- send the date through request.body
+- sends back the availability for the chosen day
+*/
 app.get("/appointments", async (request, response) => {
   const appointments = await CalendarModel.find({})
   try {
