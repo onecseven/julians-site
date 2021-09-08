@@ -4,6 +4,11 @@ import { Provider } from "react-redux"
 import { Navbar } from "./components/Navbar"
 import store from "./store"
 import "./App.css"
+import { Router, Link } from "@reach/router"
+import { Contact } from "./routes/Contact"
+import { About } from "./routes/About"
+import { Book } from "./routes/Book"
+
 
 class App extends Component {
   render() {
@@ -11,6 +16,11 @@ class App extends Component {
       <div className="App">
         <Provider store={store}>
           <Navbar />
+          <Router>
+            <Contact path="contact" />
+            <About path="about"/>
+            <Book path="book"/>
+          </Router>
         </Provider>
       </div>
     )
