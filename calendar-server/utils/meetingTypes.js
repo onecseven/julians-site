@@ -32,7 +32,6 @@ exports.meetingTypes = meetingTypes.map((type) => {
 
 return type 
 })
-
 exports.meetingTypeGenerator = ({name, duration}) => {
   switch (duration){
     case 60:
