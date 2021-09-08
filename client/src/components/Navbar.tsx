@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "@reach/router";
 import "./navbar.scss"
 
 export const Navbar = () => {
@@ -9,29 +10,29 @@ export const Navbar = () => {
   return (
     <header className="header">
       <nav className="navbar">
-        <a href="#" className="nav-logo">
+        <Link to="/" className="nav-logo">
           Julian
-        </a>
+        </Link>
         <ul className={`nav-menu ${isActive ? "active" : ""}`}>
           <li className="nav-item">
-            <a href="#" className="nav-link" onClick={hamburgerClick}>
-              Services
-            </a>
+            <Link to="book" className="nav-link" onClick={hamburgerClick}>
+              Book an appointment
+            </Link>
           </li>
-          <li className="nav-item">
-            <a href="#" className="nav-link" onClick={hamburgerClick}>
+          {/* <li className="nav-item">
+            <Link href="#" className="nav-link" onClick={hamburgerClick}>
               Blog
-            </a>
-          </li>
+            </Link>
+          </li> */}
           <li className="nav-item">
-            <a href="#" className="nav-link" onClick={hamburgerClick}>
+            <Link to="about" className="nav-link" onClick={hamburgerClick}>
               About
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a href="#" className="nav-link" onClick={hamburgerClick}>
+            <Link to="contact" className="nav-link" onClick={hamburgerClick}>
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
         <div className={`hamburger ${isActive ? "active" : ""}`} onClick={hamburgerClick}>
