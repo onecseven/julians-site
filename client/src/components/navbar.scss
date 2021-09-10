@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;1,300&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
-    font-family: 'Josefin Sans', sans-serif;
-  }
-
+  font-size: 62.5%;
+  font-family: "Josefin Sans", sans-serif;
+}
 
 li {
   list-style: none;
@@ -19,8 +18,7 @@ a {
   text-decoration: none;
 }
 
-
-.header{
+.header {
   box-shadow: white;
 }
 
@@ -30,8 +28,8 @@ a {
   padding: 1rem 1.5rem;
   background-color: transparent;
   color: white;
-  border-bottom: 2px solid rgba(255,255,255,0.15);
-  transition: all 200ms cubic-bezier(0,0.53,0.85,0.7);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  transition: all 200ms cubic-bezier(0, 0.53, 0.85, 0.7);
   font-size: 16px;
 }
 
@@ -57,17 +55,16 @@ a {
 
 .nav-item {
   margin-left: 6rem;
-
 }
 
-.nav-link{
+.nav-link {
   font-size: 2rem;
   font-weight: 500;
   transition: all 0.3s ease-in-out;
   color: whitesmoke;
 }
 
-.nav-link:hover{
+.nav-link:hover {
   color: #f08282f8;
 }
 
@@ -76,53 +73,53 @@ a {
   color: whitesmoke;
   font-size: 35px;
   padding-right: 2%;
-  border-right: 2px solid rgba(255,255,255,0.15);
-  transition: all 200ms cubic-bezier(0,0.53,0.85,0.7);
+  border-right: 2px solid rgba(255, 255, 255, 0.15);
+  transition: all 200ms cubic-bezier(0, 0.53, 0.85, 0.7);
 }
 
 .nav-logo:hover {
- color:midnightblue;
+  color: midnightblue;
 }
-
 
 @media only screen and (max-width: 768px) {
   .nav-menu {
-      position: fixed;
-      left: -100%;
-      top: 6.5rem;
-      flex-direction: column;
-      background-color: transparent;
-      width: 90%;
-      margin-left: 5%;
-      border-radius: 10px;
-      text-align: center;
-      transition: 0.3s;
-      box-shadow:
-          0 10px 27px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    left: -100%;
+    top: 6.5rem;
+    flex-direction: column;
+    background-color: transparent;
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
   }
 
   .nav-menu.active {
-      left: 0;
+    left: 0;
   }
 
   .nav-item {
-      margin: 2.5rem 0;
+    margin: 2.5rem 0;
   }
 
   .hamburger {
-      display: block;
-      cursor: pointer;
+    display: block;
+    cursor: pointer;
   }
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
-}
+  }
 
-.hamburger.active .bar:nth-child(1) {
+  .hamburger.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
-}
+  }
 
-.hamburger.active .bar:nth-child(3) {
+  .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+  }
 }
-
+.none {
+  display: none;
 }
