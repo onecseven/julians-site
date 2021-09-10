@@ -7,7 +7,7 @@ import "./App.css"
 import { Router, Link } from "@reach/router"
 import { Contact } from "./routes/Contact"
 import { About } from "./routes/About"
-import { Book } from "./routes/Book"
+import { BookForm } from "./routes/BookForm"
 
 
 class App extends Component {
@@ -19,7 +19,7 @@ class App extends Component {
           <Router>
             <Contact path="contact" />
             <About path="about"/>
-            <Book path="book"/>
+            <BookForm path="book"/>
           </Router>
         </Provider>
       </div>
