@@ -1,10 +1,16 @@
-import React from "react"
-
+import React, { useState } from "react"
+import Calendar from "react-calendar-mobile"
 
 export const CalendarField = (props) => {
-  return (<div/>)
+
+  return (
+    <div>
+      <Calendar onSelectDate={(wtf) => {
+        // conne
+}}
+      />
+    </div>
+  )
 }
-  // TODO
-  // 1. CREATE INPUT FIELD
-  // 2. USE HOOKS TO MANAGE IT
-  // 3. CONNECT IT TO REDUX
+// TODO
+// 1. CONNECT IT TO REDUX

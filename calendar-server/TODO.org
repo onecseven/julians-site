@@ -20,7 +20,7 @@
 **** date
 **** time in unix time probably
 ** 3. Research topics:
-*** 3a. TODO twilio
+*** 3a. DROP twilio
 *** 3b. DONE google calendar API
 *** 3c. DONE how to email?
 *** 3d. TODO functions for timezone changing from unix time to others
