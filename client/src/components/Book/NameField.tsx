@@ -1,15 +1,27 @@
 import React, {useState} from "react"
-import {TextInput} from "../shared/InputBox"
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1),
+      width: '100%',
+    },
+  },
+}));
 
 export const NameField = (props) => {
   const [value, setValue] = useState("")
 
   return (
-    <TextInput
-    onChange={(newVal) => setValue(newVal)}
-    placeholder="What's your name?"
+    <TextField
+    id="filled-name"
+    label="Name"
     value={value}
-    />
+    onChange={(event) => setValue(event.target.value)}
+    variant="filled"
+  />
   )
 }
 // TODO
