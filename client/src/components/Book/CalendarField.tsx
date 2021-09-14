@@ -4,9 +4,9 @@ import Calendar from "react-calendar-mobile"
 export const CalendarField = (props) => {
 
   return (
-    <div>
+    <div className="calendar">
       <Calendar onSelectDate={(wtf) => {
-        // conne
+        // connect to redux
 }}
       />
     </div>

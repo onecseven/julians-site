@@ -5,22 +5,15 @@ body {
   background-size: cover;
 }
 
-.book-container {
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    ". ."; 
-}
-
 .options-display {
   display: grid; 
   grid-template-columns: 1fr; 
-  grid-template-rows: 1fr 1fr 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "."
-    "."
-    "."; 
+  grid-template-rows: auto; 
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.calendar {
+  width: 64%;
+
 }
