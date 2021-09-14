@@ -1,17 +1,16 @@
 import React, { useState } from "react"
-import PropTypes from "prop-types"
 import { makeStyles } from "@material-ui/core/styles"
-import Container from "@material-ui/core/Container"
-import { Button, Chip, Divider, Grid, Typography } from "@material-ui/core"
+import { Chip, Divider, Grid, Typography } from "@material-ui/core"
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     maxWidth: 480,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "#f3f1d1",
   },
   chip: {
     margin: theme.spacing(0.5),
+    fontSize: "medium",
   },
   section1: {
     margin: theme.spacing(3, 2),

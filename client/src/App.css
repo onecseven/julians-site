@@ -5,15 +5,14 @@ body {
   background-size: cover;
 }
 
-.options-display {
-  display: grid; 
-  grid-template-columns: 1fr; 
-  grid-template-rows: auto; 
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
+.calendar > child {
+  width: 100%;
 }
-.calendar {
-  width: 64%;
 
+.MuiTab-wrapper {
+  font-size: large;
+}
+
+p.MuiTypography-body1 {
+  font-size: medium;
 }
