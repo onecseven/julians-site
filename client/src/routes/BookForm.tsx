@@ -6,13 +6,11 @@ import { OptionsField } from "../components/Book/OptionsField"
 
 export const BookForm = (props) => {
   return (
-    <div className="book-container">
       <div className="options-display">
         <OptionsField/> 
         <NameField/>
         <EmailField/>
         <CalendarField/> 
       </div>
-    </div>
   )
 }
