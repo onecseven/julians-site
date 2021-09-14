@@ -3,13 +3,10 @@ import React, { useState } from "react"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& .MuiTextField-root': {
       margin: theme.spacing(1),
       width: '100%',
     },
-  },
 }));
-
 
 export const EmailField = (props) => {
   const [value, setValue] = useState("")
@@ -20,6 +17,7 @@ export const EmailField = (props) => {
     id="filled-email"
     label="Email"
     value={value}
+    className={classes.root}
     onChange={(event) => setValue(event.target.value)}
     variant="filled"
   />
