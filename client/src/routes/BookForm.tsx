@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export const BookForm = (props) => {
+export const Services = (props) => {
   const classes = useStyles()
 
   return (

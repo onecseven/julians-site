@@ -15,7 +15,7 @@ export const Navbar = () => {
         </Link>
         <ul className={`nav-menu ${isActive ? "active" : ""}`}>
           <li className="nav-item">
-            <Link to="book" className="nav-link" onClick={hamburgerClick}>
+            <Link to="services" className="nav-link" onClick={hamburgerClick}>
               Book an appointment
             </Link>
           </li>

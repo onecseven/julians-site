@@ -1,6 +1,9 @@
 import React, { useState } from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { Chip, Divider, Grid, Typography } from "@material-ui/core"
+import {
+  navigate
+} from "@reach/router"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -72,6 +75,7 @@ export const Option = ({ name, description, duration }: optionProps) => {
           })}
         </div>
       </div>
+          
     </div>
   )
 }

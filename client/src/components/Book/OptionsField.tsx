@@ -1,6 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Box, Tab, Tabs } from "@material-ui/core"
+import { Box, Button, Divider, Tab, Tabs } from "@material-ui/core"
 import { Yoga } from "./Yoga"
 import { Energy } from "./Energy"
 
@@ -76,9 +76,11 @@ export const OptionsField = () => {
       </Tabs>
       <TabPanel value={value} index={0}>
         <Yoga />
+        <Button variant="contained" color="secondary" size="large" onClick={() => console.log("hi")}>Book</Button>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Energy />
+        <Button variant="contained" color="secondary" size="large" onClick={() => console.log("hi")}>Book</Button>
       </TabPanel>
     </div>
   )
