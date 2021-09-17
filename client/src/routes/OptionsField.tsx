@@ -1,8 +1,10 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { Box, Button, Divider, Tab, Tabs } from "@material-ui/core"
-import { Yoga } from "./Yoga"
-import { Energy } from "./Energy"
+import { Yoga } from "../components/Book/Yoga"
+import { Energy } from "../components/Book/Energy"
+import { navigate } from "@reach/router"
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,7 +49,7 @@ const TabPanel = (props) => {
   )
 }
 
-export const OptionsField = () => {
+export const OptionsField = (props) => {
   const classes = useStyles()
   const [value, setValue] = React.useState(0)
 
@@ -76,11 +78,10 @@ export const OptionsField = () => {
       </Tabs>
       <TabPanel value={value} index={0}>
         <Yoga />
-        <Button variant="contained" color="secondary" size="large" onClick={() => console.log("hi")}>Book</Button>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Energy />
-        <Button variant="contained" color="secondary" size="large" onClick={() => console.log("hi")}>Book</Button>
+
       </TabPanel>
     </div>
   )
