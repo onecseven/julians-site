@@ -17,6 +17,8 @@ so that we can feel a sense of wholeness with all that is. Feeling embodied and 
 flow with life opens up the inherent wisdom we carry within us which can be
 transformational. Each session is uniquely crafted to fit your specific needs."
         duration={[60]}
+        route="/book/energy"
+
       />
     </>
   )

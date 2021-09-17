@@ -17,5 +17,6 @@ presence, shift Timelines, awaken intuition, and strengthen your connection
 and sense of belonging to the Earth and the Universe. Each session is uniquely
 crafted to fit your specific needs."
     duration={[30, 50]}
+    route="/book/energy"
   />
 )
