@@ -1,9 +1,7 @@
 import React, { useState } from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import { Chip, Divider, Grid, Typography } from "@material-ui/core"
-import {
-  navigate
-} from "@reach/router"
+import { Button, Chip, Divider, Grid, Typography } from "@material-ui/core"
+import { navigate } from "@reach/router"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,26 +22,22 @@ const useStyles = makeStyles((theme) => ({
   section3: {
     margin: theme.spacing(3, 1, 1),
   },
+  section4: {
+    marginTop: "5%",
+    fontSize: "15px",
+  },
 }))
 
 type optionProps = {
   name: string
   description: string
   duration: number[]
+  route: string
 }
 
-export const Option = ({ name, description, duration }: optionProps) => {
-  // return (
-  //   <div className="option-member">
-  //     <h2>{name}</h2>
-  //     <p>{description} </p>
-  //     <ul>
-  //       {duration.map(minutes => (<li>{minutes}</li>))}
-  //     </ul>
-  //   </div>
-  // )
+export const Option = ({ name, description, duration, route }: optionProps) => {
   const [selected, setSelected] = useState(0)
-  
+
   const classes = useStyles()
 
   return (
@@ -67,15 +61,29 @@ export const Option = ({ name, description, duration }: optionProps) => {
         </Typography>
         <div>
           {duration.map((time, index) => {
-            return (<Chip className={classes.chip} 
-              label={time + " minutes"} clickable color={index === selected ? "primary" : "default"}
-              onClick={() => {
-                setSelected(index)
-              }} />)
+            return (
+              <Chip
+                className={classes.chip}
+                label={time + " minutes"}
+                clickable
+                color={index === selected ? "primary" : "default"}
+                onClick={() => {
+                  setSelected(index)
+                }}
+              />
+            )
           })}
         </div>
+        <Button
+          variant="contained"
+          color="secondary"
+          size="large"
+          className={classes.section4}
+          onClick={() => navigate(route)}
+        >
+          Book
+        </Button>
       </div>
-          
     </div>
   )
 }
