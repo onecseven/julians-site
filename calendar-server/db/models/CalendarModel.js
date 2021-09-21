@@ -37,7 +37,16 @@ const CalendarSchema = new mongoose.Schema({
     required: true
   },
   date: {
-    type: Date,
+    type: {
+      utc: date,
+      timeslot: {
+        1: Boolean,
+        2: Boolean,
+        3: Boolean,
+        
+
+      }
+    },
     required: true,
   },
 })
