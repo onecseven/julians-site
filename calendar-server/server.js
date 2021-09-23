@@ -1,11 +1,13 @@
 const express = require("express")
 const mongoose = require("mongoose")
-const CalendarRouter = require("./routes/CalendarRoutes.js");
-
+const routes = require("./routes/routes.js");
+const { appts } = routes
 const app = express()
 app.use(express.json())
 
-app.use(CalendarRouter);
+for (let route in appts) {
+  app.use(appts[route])
+}
 
 const server = app.listen(3000, () => {
   console.log("Server is running...")
