@@ -25,6 +25,11 @@ export const Navbar = () => {
             </Link>
           </li> */}
           <li className="nav-item">
+            <Link to="login" className="nav-link" onClick={hamburgerClick}>
+              Login
+            </Link>
+          </li>
+          <li className="nav-item">
             <Link to="about" className="nav-link" onClick={hamburgerClick}>
               About
             </Link>

@@ -10,6 +10,8 @@ import { About } from "./routes/About"
 import { OptionsField as Services } from "./routes/OptionsField"
 import { Book } from "./routes/Book"
 import { makeStyles, Paper } from "@material-ui/core"
+import { Login } from "./routes/Login"
+import { Register } from "./routes/Register"
 
 const useStyles = makeStyles((theme) => ({
   papier: {
@@ -36,6 +38,8 @@ const App = () => {
             <About path="about" />
             <Services path="services" />
             <Book path="book/:service" />
+            <Login path="login" />
+            <Register path="Register" />
           </Router>
         </Paper>
       </Provider>
