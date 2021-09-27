@@ -5,6 +5,10 @@ import { StartRegistration } from "../store/loginSlice"
 
 const label = { inputProps: { "aria-label": "Keep Logged In" } }
 
+/**
+ * TODO: Confirm Password 
+ */
+
 export const Register = (props) => {
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
