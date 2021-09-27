@@ -1,12 +1,12 @@
 let Sequelize = require("sequelize")
-let { sequelize } = require("../DB")
-let { User } = require("./User")
+let { sequelize } = require("../../DB")
 
 let Order = sequelize.define(
   "orders",
   {
     order_id: {
       type: Sequelize.INTEGER,
+      autoIncrement: true,
       primaryKey: true,
     },
     date: {

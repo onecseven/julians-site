@@ -1,9 +1,9 @@
-const { smtp } = require("../../email/emailer");
-const { requestApprovalEmail } = require("../../email/RequestApproval");
-const { meetingTypeGenerator } = require("../../utils/meetingTypes");
+const { smtp } = require("../../email/emailer")
+const { requestApprovalEmail } = require("../../email/RequestApproval")
 const express = require("express")
-const app = module.exports = express()
-
+const { createOrder } = require("../../db/models/orders/createOrder")
+const findUserById = require("../../db/models/users/findUser")
+const app = (module.exports = express())
 
 /** Accepts a req.body formatted this way:
  * {
@@ -15,29 +15,29 @@ const app = module.exports = express()
  * date: Date.toISOString
  * }
  */
+
+//DONE
+
 app.post("/appointments", async (request, response) => {
-  let {
-    clientFirstName, clientLastName, clientEmail, meetingType, meetingDuration, date,
-  } = request.body;
-  let decoratedMeetingType = meetingTypeGenerator({
-    name: meetingType,
-    duration: meetingDuration,
-  });
-  const reservation = new CalendarModel({
-    clientFirstName,
-    clientLastName,
-    clientEmail,
-    meetingType: decoratedMeetingType,
-    date: new Date(date),
-  });
-
-  let email = requestApprovalEmail(reservation);
-
+  let { date, timeslot, meetingType, user_id } = request.body
+  const { order_id } = await createOrder({
+    date,
+    timeslot,
+    meeting_type: meetingType,
+    user_id,
+  })
+  let { name, email } = findUserById(user_id)
+  let emailTemplate = requestApprovalEmail({
+    clientEmail: email,
+    clientName: name,
+    date: date,
+    meetingType,
+    _id: order_id,
+  })
   try {
-    await smtp.sendMail(email);
-    await reservation.save();
-    response.status(200).send();
+    await smtp.sendMail(emailTemplate)
+    response.status(200).send()
   } catch (e) {
-    response.status(500).send(e);
+    response.status(500).send(e)
   }
-});
+})

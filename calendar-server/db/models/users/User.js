@@ -1,6 +1,5 @@
-let { sequelize } = require("../DB")
+let { sequelize } = require("../../DB")
 let Sequelize = require("sequelize")
-let { Order } = require("./Orders")
 
 
 const User = sequelize.define(
@@ -21,6 +20,7 @@ const User = sequelize.define(
     user_id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
+      autoIncrement: true,
     },
   },
   {
