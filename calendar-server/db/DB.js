@@ -15,4 +15,4 @@ let { username, password, host, port, database, sslmode, connectionString } =
 //   },
 // });
 
-module.exports.sequelize = new Sequelize(connectionString)
+module.exports.sequelize = new Sequelize(connectionString, { omitNull: true })

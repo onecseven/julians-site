@@ -1,4 +1,4 @@
-const { User } = require("./models/User")
+const { User } = require("./models/users/User")
 const { Order } = require("./models/Orders")
 
 // User.sync().then(function () {

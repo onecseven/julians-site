@@ -4,6 +4,8 @@ const { createConfirmationTemplate } = require("../../email/reservation-confirme
 const express = require("express")
 const app = module.exports = express()
 
+//WAITING Switch to DB waiting for email
+
 app.get("/appointments/:id/confirm", async (request, response) => {
   let { id } = request.params;
   try {
