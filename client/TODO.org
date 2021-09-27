@@ -1,5 +1,5 @@
 * JULIAN'S SITE
-** TODO Form to make reservations:
+**  Form to make reservations:
   - Need a calendar component.
   - Once a day is chosen, then we make a call to the calendar with the chosen date
   - Then the user chooses a time (shown in buttons, localized for them) and then we send a POST appointments API call
