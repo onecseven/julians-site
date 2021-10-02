@@ -12,6 +12,7 @@ import { Book } from "./routes/Book"
 import { makeStyles, Paper } from "@material-ui/core"
 import { Login } from "./routes/Login"
 import { Register } from "./routes/Register"
+import { Test } from "./routes/Test"
 
 const useStyles = makeStyles((theme) => ({
   papier: {
@@ -39,7 +40,8 @@ const App = () => {
             <Services path="services" />
             <Book path="book/:service" />
             <Login path="login" />
-            <Register path="Register" />
+            <Register path="register" />
+            <Test path="test" />
           </Router>
         </Paper>
       </Provider>

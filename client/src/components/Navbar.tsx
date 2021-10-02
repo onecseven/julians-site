@@ -19,11 +19,11 @@ export const Navbar = () => {
               Book an appointment
             </Link>
           </li>
-          {/* <li className="nav-item">
-            <Link href="#" className="nav-link" onClick={hamburgerClick}>
-              Blog
+          <li className="nav-item">
+            <Link to="test" className="nav-link" onClick={hamburgerClick}>
+              Test
             </Link>
-          </li> */}
+          </li>
           <li className="nav-item">
             <Link to="login" className="nav-link" onClick={hamburgerClick}>
               Login
