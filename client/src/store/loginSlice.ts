@@ -17,7 +17,6 @@ export const loginSlice = createSlice({
     StartLogin: (state, action) => {
     },
     StartRegistration: (state, action) => {
-
     }
   },
 })

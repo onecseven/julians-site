@@ -1,0 +1,45 @@
+{
+  "data": {
+    "user_id": 12,
+    "name": "belb belberoni",
+    "email": "belb@belberoni.com",
+    "password": "$2b$12$uMfmUcdIMDWTupzpkD1el.pst9Ut6SkwX37IlZP0fFDU6.sfY21yi"
+  },
+  "status": 200,
+  "statusText": "OK",
+  "headers": {
+    "connection": "keep-alive",
+    "content-length": "141",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Wed, 29 Sep 2021 19:20:25 GMT",
+    "etag": "W/\"8d-LTdVtZK4qHUMLY/Nj55pRdFjFgA\"",
+    "keep-alive": "timeout=61",
+    "x-powered-by": "Express"
+  },
+  "config": {
+    "url": "/user/create",
+    "method": "post",
+    "data": "{\"email\":\"belb@belberoni.com\",\"name\":\"belb belberoni\",\"password\":\"mierda\"}",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/json"
+    },
+    "transformRequest": [
+      null
+    ],
+    "transformResponse": [
+      null
+    ],
+    "timeout": 0,
+    "xsrfCookieName": "XSRF-TOKEN",
+    "xsrfHeaderName": "X-XSRF-TOKEN",
+    "maxContentLength": -1,
+    "maxBodyLength": -1,
+    "transitional": {
+      "silentJSONParsing": true,
+      "forcedJSONParsing": true,
+      "clarifyTimeoutError": false
+    }
+  },
+  "request": {}
+}

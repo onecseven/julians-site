@@ -10,9 +10,18 @@ const app = (module.exports = express())
  * }
  */
 
-app.get("/appointments/ondate", (request, response) => {
+const timeslotFormatter = (rawData) => {
+  console.log(rawData)
+  let result = []
+  for (let datum of rawData) {
+    result.push(datum.timeslot)
+  }
+  return result
+}
+
+app.post("/appointments/ondate", (request, response) => {
   let { date } = request.body
   findOrderByDate(date)
-    .then((appointments) => response.send(appointments))
     .catch((error) => response.sendStatus(404))
+    .then(( data ) => response.send({ timeslots: timeslotFormatter(data) }))
 })

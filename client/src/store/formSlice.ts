@@ -6,6 +6,7 @@ type initialFormState = {
   date: Date
   meetingType: "YOGA" | "ENERGY"
   email: String
+  timeslot: 1 | 2 | 3 | 4 | 5 | 6
 }
 
 let initialState: initialFormState = {
@@ -14,6 +15,7 @@ let initialState: initialFormState = {
   date: null,
   meetingType: null,
   email: "",
+  timeslot: null
 }
 
 export const formSlice = createSlice({
@@ -31,6 +33,10 @@ export const formSlice = createSlice({
     setDate: (state, action) => {
       let date = action.payload
       state.date = date
+    },
+    setTimeslot: (state, action) => {
+      let date = action.payload
+      state.timeslot = date
     },
     setMeetingType: (state, action) => {
       let meetingType = action.payload
@@ -52,6 +58,7 @@ export const {
   setEmail,
   setDate,
   setMeetingType,
+  setTimeslot
 } = formSlice.actions
 
 export default formSlice.reducer

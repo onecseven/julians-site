@@ -1,15 +1,18 @@
 * JULIAN'S SITE
-**  Form to make reservations:
+** NOW  Form to make reservations:
   - Need a calendar component.
   - Once a day is chosen, then we make a call to the calendar with the chosen date
   - Then the user chooses a time (shown in buttons, localized for them) and then we send a POST appointments API call
 ** TODO Analytics
 *** TODO Show times in user's local time, POST them in UTC. 
 ** TODO Re-figure out the payment system lmao
-** DONE Find the menu bar reference. (email) We wanta fixed bar on top that becomes horizontal on mobile
-** DONE Add React Router and read up on routes
-*** DONE READ A REACT-ROUTER GETTING STARTED GUIDE
-*** DONE CREATE ROUTE FOR ABOUT
-*** DONE CREATE ROUTE FOR CONTACT
-*** DONE CREATE ROUTE FOR BOOK
-** DONE install react-hook-form
+** TODO Sessions
+** DONE TEST SYSTEMS
+*** TODO write redux logic for calendar-component and the POST route "/appointments/ondate/"
+*** TODO write component that displays the timeslot logic
+**** TODO write constant file with both timeslot number and a date object specifying the time. (lets do 2pm to 5pm)
+*** TODO write redux logic for login component and the POST route "/user/login"  console.log(date)
+**** TODO handle error states from  /user/login
+*** TODO  write redux logic for register component and the POST route "/user/create"
+**** TODO handle error states from createUser
+** TODO Free consult component, paid consult check on db 
