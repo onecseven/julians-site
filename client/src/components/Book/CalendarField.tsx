@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Calendar from "react-calendar-mobile"
 import { useDispatch } from "react-redux"
-import { setDate } from "../../store/formSlice"
+import { setDate } from "../../store/slices/formSlice"
 
 export const CalendarField = (props) => {
   const dispatch = useDispatch()

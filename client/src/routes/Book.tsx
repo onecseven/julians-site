@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 import { CalendarField } from "../components/Book/CalendarField"
 import { EmailField } from "../components/Book/EmailField"
 import { NameField } from "../components/Book/NameField"
-import { setMeetingType } from "../store/formSlice"
+import { setMeetingType } from "../store/slices/formSlice"
 
 export const Book = (props) => {
   let { service } = props

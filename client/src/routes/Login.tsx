@@ -1,7 +1,7 @@
 import { Button, Checkbox, FormControlLabel, TextField } from "@material-ui/core"
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
-import { StartLogin } from "../store/loginSlice"
+import { POST_LOGIN } from "../store/slices/loginSlice"
 
 export const Login = (props) => {
   const [email, setEmail] = useState("")
@@ -14,7 +14,7 @@ export const Login = (props) => {
         className="loginForm"
         onSubmit={(event) => {
           event.preventDefault()
-          dispatch(StartLogin({ email, password: pwd }))
+          dispatch(POST_LOGIN({ email, password: pwd }))
         }}
       >
         <TextField

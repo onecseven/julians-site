@@ -1,12 +1,12 @@
 import { Button, Checkbox, FormControlLabel, TextField } from "@material-ui/core"
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
-import { StartRegistration } from "../store/loginSlice"
 
 const label = { inputProps: { "aria-label": "Keep Logged In" } }
 
 /**
  * TODO: Confirm Password 
+ * TODO: Make it into a square rather than Just a colum.
  */
 
 export const Register = (props) => {
@@ -21,7 +21,7 @@ export const Register = (props) => {
         className="loginForm"
         onSubmit={(event) => {
           event.preventDefault()
-          dispatch(StartRegistration({ email, password: pwd }))
+          dispatch(({ email, password: pwd }))
         }}
       >
         <TextField
