@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React from "react"
 import Calendar from "react-calendar-mobile"
 import { useDispatch } from "react-redux"
-import { setDate } from "../../store/slices/formSlice"
+import { CLEAR_TIMESLOTS, POST_DATE } from "../../store/slices/calendarSlice"
+import { dateConverter } from "../shared/dateConverter"
 
 export const CalendarField = (props) => {
   const dispatch = useDispatch()
@@ -9,11 +10,10 @@ export const CalendarField = (props) => {
     <div className="calendar">
       <Calendar
         onSelectDate={(newDate) => {
-          dispatch(setDate(newDate))
+          dispatch(CLEAR_TIMESLOTS())
+          dispatch(POST_DATE({ date: dateConverter(newDate) }))
         }}
       />
     </div>
   )
 }
-// TODO
-// 1. CONNECT IT TO REDUX
