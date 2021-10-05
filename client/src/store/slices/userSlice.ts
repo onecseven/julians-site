@@ -11,10 +11,10 @@ export const CREATE_USER_FAILURE =
 export const CREATE_USER_SUCCESS =
   createAction<{ email: string; pwd: string; user_id: number }>("LOGIN_SUCCESS")
 
-type initialLoginState = {
+type initialUserState = {
 }
 
-const initialState: initialLoginState = {
+const initialState: initialUserState = {
 }
 
 export const userSlice = createSlice({
