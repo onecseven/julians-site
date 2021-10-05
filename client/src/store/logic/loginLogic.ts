@@ -7,12 +7,12 @@ export const POST_LOGIN_LOGIC = createLogic<
   FakeRootState,
   ReturnType<typeof POST_LOGIN>["payload"]
 >({
-  type: "POST_LOGIN", // Respond to actions of this type
+  type: "login/POST_LOGIN", // Respond to actions of this type
   latest: true, // Only provide the latest response if fired many times
   processOptions: {
     dispatchReturn: true, // Automatically dispatch the actions below from the resolved/rejected promise
-    successType: "LOGIN_SUCCESS", // If promise resolved, dispatch this action
-    failType: "LOGIN_FAILURE", // If promise rejected, dispatch this action
+    successType: "login/LOGIN_SUCCESS", // If promise resolved, dispatch this action
+    failType: "login/LOGIN_FAILURE", // If promise rejected, dispatch this action
   },
   // Declare our promise inside a process
   process({ action }) {

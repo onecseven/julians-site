@@ -7,7 +7,7 @@ export const POST_REGISTER_LOGIC = createLogic<
   FakeRootState,
   ReturnType<typeof POST_LOGIN>["payload"]
 >({
-  type: "POST_LOGIN", // Respond to actions of this type
+  type: "user/CREATE_USER", // Respond to actions of this type
   latest: true, // Only provide the latest response if fired many times
   processOptions: {
     dispatchReturn: true, // Automatically dispatch the actions below from the resolved/rejected promise
