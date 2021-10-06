@@ -7,7 +7,7 @@ export const POST_DATE_LOGIC = createLogic<
   FakeRootState,
   ReturnType<typeof POST_DATE>["payload"]
 >({
-  type: "POST_DATE", // Respond to actions of this type
+  type: "calendar/POST_DATE", // Respond to actions of this type
   latest: true, // Only provide the latest response if fired many times
   processOptions: {
     dispatchReturn: true, // Automatically dispatch the actions below from the resolved/rejected promise
