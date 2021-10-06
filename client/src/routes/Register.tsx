@@ -1,27 +1,37 @@
-import { Button, Checkbox, FormControlLabel, TextField } from "@material-ui/core"
+import {
+  Button,
+  Checkbox,
+  FormControlLabel,
+  TextField,
+} from "@material-ui/core"
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
+import { POST_CREATE_USER } from "../store/slices/userSlice"
 
 const label = { inputProps: { "aria-label": "Keep Logged In" } }
 
 /**
- * TODO: Confirm Password 
+ * TODO: Confirm Password
  * TODO: Make it into a square rather than Just a colum.
+ * TODO: sucess should go to /home/
+ * TODO: failure should display an alarm or something
  */
 
 export const Register = (props) => {
   const [email, setEmail] = useState("")
   const [name, setName] = useState("")
   const [pwd, setPwd] = useState("")
-  const dispatch = useDispatch()
+  const [pwd2, setPwd2] = useState("")
+  let error = pwd !== pwd2
 
+  const dispatch = useDispatch()
   return (
     <div>
       <form
         className="loginForm"
         onSubmit={(event) => {
           event.preventDefault()
-          dispatch(({ email, password: pwd }))
+          dispatch(POST_CREATE_USER({ email, password: pwd, name }))
         }}
       >
         <TextField
@@ -54,6 +64,19 @@ export const Register = (props) => {
             let newText = event.target.value
             setPwd(newText)
           }}
+          error={error}
+          variant="filled"
+        />
+        <TextField
+          id="password2"
+          type="password"
+          label="Password"
+          value={pwd2}
+          onChange={(event) => {
+            let newText = event.target.value
+            setPwd2(newText)
+          }}
+          error={error}
           variant="filled"
         />
         <Button
@@ -63,7 +86,7 @@ export const Register = (props) => {
           color="primary"
           id="form_button"
         >
-          Log in
+          Register
         </Button>
       </form>
     </div>
