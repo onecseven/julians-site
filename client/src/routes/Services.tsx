@@ -3,8 +3,6 @@ import { makeStyles } from "@material-ui/core/styles"
 import { Box, Button, Divider, Tab, Tabs } from "@material-ui/core"
 import { Yoga } from "../components/Book/Yoga"
 import { Energy } from "../components/Book/Energy"
-import { navigate } from "@reach/router"
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -78,10 +76,9 @@ export const OptionsField = (props) => {
       </Tabs>
       <TabPanel value={value} index={0}>
         <Yoga />
-      </TabPanel>
+      </TabPanel> 
       <TabPanel value={value} index={1}>
         <Energy />
-
       </TabPanel>
     </div>
   )
