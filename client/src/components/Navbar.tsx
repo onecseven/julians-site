@@ -2,6 +2,11 @@ import React, { useState } from "react"
 import { Link } from "@reach/router";
 import "./navbar.scss"
 
+/**
+ * TODO: Replace Login/Register on top right corner with "Hello, {Name}"
+ * * use selector
+ */
+
 export const Navbar = () => {
   const [isActive, toggleActive] = useState(false)
   let hamburgerClick = () => {
@@ -17,11 +22,6 @@ export const Navbar = () => {
           <li className="nav-item">
             <Link to="services" className="nav-link" onClick={hamburgerClick}>
               Book an appointment
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="test" className="nav-link" onClick={hamburgerClick}>
-              Test
             </Link>
           </li>
           <li className="nav-item">
