@@ -42,7 +42,7 @@ export const CalendarTest = (props) => {
           Check Day
         </Button>
       </form>
-      {timeslot.length > 0 ? <TimeslotTest timeslot={timeslot} /> : null}
+      {timeslot.length > 0 ? <TimeslotTest /> : null}
 
       <Collapsable
         name="JSON"
