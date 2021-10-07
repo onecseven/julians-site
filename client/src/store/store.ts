@@ -9,6 +9,8 @@ import axios from "axios"
 import calendarSlice from "./slices/calendarSlice"
 import userSlice from "./slices/userSlice"
 import { logic } from "./logic/rootLogic"
+import loginSlice from "./slices/loginSlice"
+import uiSlice from "./slices/uiSlice"
 
 const deps = {
   httpClient: axios,
@@ -30,6 +32,8 @@ export const store = configureStore({
     form: formSlice,
     calendar: calendarSlice,
     user: userSlice,
+    login: loginSlice,
+    ui: uiSlice,
   },
   middleware: middleware,
 })
