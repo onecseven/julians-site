@@ -11,9 +11,9 @@ import { POST_CREATE_USER } from "../store/slices/userSlice"
 const label = { inputProps: { "aria-label": "Keep Logged In" } }
 
 /**
- * TODO: Confirm Password
+ * DONE: Confirm Password
  * TODO: Make it into a square rather than Just a colum.
- * TODO: sucess should go to /home/
+ * DONE: sucess should go to /home/
  * TODO: failure should display an alarm or something
  */
 
