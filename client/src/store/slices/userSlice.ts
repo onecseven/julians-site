@@ -1,6 +1,9 @@
 import { createAction, createSlice } from "@reduxjs/toolkit"
 import { navigate } from "@reach/router"
-// TODO fill this in
+
+/**
+ * TODO: handle errors
+ */
 
 export const POST_CREATE_USER =
   createAction<{ email: string; password: string; name: string }>(
