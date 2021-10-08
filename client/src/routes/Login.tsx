@@ -6,7 +6,7 @@ import {
 } from "@material-ui/core"
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
-import { POST_LOGIN } from "../store/slices/loginSlice"
+import { POST_LOGIN } from "../store/features/login/loginActions"
 
 export const Login = (props) => {
   const [email, setEmail] = useState("")

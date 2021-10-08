@@ -6,16 +6,10 @@ import {
 } from "@material-ui/core"
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
-import { POST_CREATE_USER } from "../store/slices/userSlice"
+import { POST_CREATE_USER } from "../store/features/user/userSlice"
 
 const label = { inputProps: { "aria-label": "Keep Logged In" } }
 
-/**
- * DONE: Confirm Password
- * TODO: Make it into a square rather than Just a colum.
- * DONE: sucess should go to /home/
- * TODO: failure should display an alarm or something
- */
 
 export const Register = (props) => {
   const [email, setEmail] = useState("")

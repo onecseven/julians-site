@@ -1,7 +1,7 @@
 import { makeStyles, TextField } from "@material-ui/core"
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
-import { setEmail } from "../../store/slices/formSlice"
+import { setEmail } from "../../store/features/form/formSlice"
 
 const useStyles = makeStyles((theme) => ({
   root: {

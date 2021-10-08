@@ -4,13 +4,9 @@ import {
   useAppSelector as useSelector,
 } from "../store/hooks"
 import { CalendarField } from "../components/Book/CalendarField"
-import { setMeetingType } from "../store/slices/formSlice"
+import { setMeetingType } from "../store/features/form/formSlice"
 import { TimeslotTest } from "../components/Test/TimeslotTest"
 import { Button } from "@material-ui/core"
-
-//TODO IMPLEMENT ERROR
-//TODO Give title more room
-//TODO Button stuck to bottom of the papier
 
 const text = {
   energy: "Guided Energy Work",

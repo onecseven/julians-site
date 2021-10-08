@@ -3,14 +3,14 @@ import {
   getDefaultMiddleware,
   MiddlewareArray,
 } from "@reduxjs/toolkit"
-import formSlice from "./slices/formSlice"
+import formSlice from "./features/form/formSlice"
 import { createLogicMiddleware } from "redux-logic"
 import axios from "axios"
-import calendarSlice from "./slices/calendarSlice"
-import userSlice from "./slices/userSlice"
-import { logic } from "./logic/rootLogic"
-import loginSlice from "./slices/loginSlice"
-import uiSlice from "./slices/uiSlice"
+import calendarSlice from "./features/calendar/calendarSlice"
+import userSlice from "./features/user/userSlice"
+import { logic } from "./rootLogic"
+import loginSlice from "./features/login/loginSlice"
+import uiSlice from "./features/ui/uiSlice"
 
 const deps = {
   httpClient: axios,
@@ -24,6 +24,8 @@ export const fakeStore = configureStore({
     form: formSlice,
     calendar: calendarSlice,
     user: userSlice,
+    login: loginSlice,
+    ui: uiSlice,
   },
 })
 

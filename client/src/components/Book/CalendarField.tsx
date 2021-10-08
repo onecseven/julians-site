@@ -1,7 +1,7 @@
 import React from "react"
 import Calendar from "react-calendar-mobile"
 import { useDispatch } from "react-redux"
-import { CLEAR_TIMESLOTS, POST_DATE } from "../../store/slices/calendarSlice"
+import { CLEAR_TIMESLOTS, POST_DATE } from "../../store/features/calendar/calendarActions"
 import { dateConverter } from "../shared/dateConverter"
 
 export const CalendarField = (props) => {

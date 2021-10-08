@@ -52,6 +52,3 @@ export const CalendarTest = (props) => {
     </div>
   )
 }
-
-// TODO
-// 1. CONNECT IT TO REDUX
