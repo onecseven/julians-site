@@ -1,7 +1,7 @@
 import { createLogic } from "redux-logic"
 import axios from "axios"
-import { FakeRootState,  } from "../store"
-import { POST_DATE } from "../slices/calendarSlice"
+import { FakeRootState,  } from "../../store"
+import { POST_DATE } from "./calendarActions"
 
 export const POST_DATE_LOGIC = createLogic<
   FakeRootState,

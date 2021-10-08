@@ -16,6 +16,8 @@ export const CREATE_USER_SUCCESS = createAction<{
   user_id: number
 }>("user/CREATE_USER_SUCCESS")
 
+export const DUPLICATE_EMAIL = createAction<{}>("user/DUPLICATE_EMAIL")
+
 export const CREATE_USER_FAILURE = createAction<{ error: string }>(
   "user/CREATE_USER_FAILURE"
 )
@@ -36,9 +38,13 @@ export const userSlice = createSlice({
 
     },
     CREATE_USER_FAILURE: (state, action) => {
+      console.log()
       console.log("create user failure")
       console.dir(action.payload)
     },
+    DUPLICATE_EMAIL: (state,action) => {
+      /**FIGURE OUT HOW TO SEND TO snackbar, maybe from the logic */
+    }
   },
 })
 

@@ -1,7 +1,7 @@
 import { createLogic } from "redux-logic"
 import axios from "axios"
-import { POST_LOGIN } from "../slices/loginSlice"
-import { FakeRootState, RootState } from "../store"
+import { POST_LOGIN } from "./loginActions"
+import { FakeRootState, RootState } from "../../store"
 
 export const POST_LOGIN_LOGIC = createLogic<
   FakeRootState,

@@ -1,7 +1,7 @@
 import { createLogic } from "redux-logic"
 import axios from "axios"
-import { FakeRootState, RootState } from "../store"
-import { POST_CREATE_USER } from "../slices/userSlice"
+import { FakeRootState, RootState } from "../../store"
+import { POST_CREATE_USER, CREATE_USER_FAILURE } from "./userSlice"
 
 export const POST_REGISTER_LOGIC = createLogic<
   FakeRootState,
@@ -26,6 +26,26 @@ export const POST_REGISTER_LOGIC = createLogic<
       })
       .then(({ data }) => data)
       .catch((err) => err)
+  },
+})
+
+export const CREATE_USER_FAILURE_LOGIC = createLogic<
+  FakeRootState,
+  ReturnType<typeof CREATE_USER_FAILURE>["payload"]
+>({
+  type: "user/CREATE_USER_FAILURE", // Respond to actions of this type
+  latest: true, // Only provide the latest response if fired many times
+  processOptions: {
+    dispatchReturn: true, // Automatically dispatch the actions below from the resolved/rejected promise
+    failType: "user/DUPLICATE_EMAIL", // If promise rejected, dispatch this action
+  },
+  validate({ getState, action }, allow, reject) {
+    let { error } = action.payload
+    switch (error) {
+      case "ER_DUP_ENTRY": {
+        
+      }
+    }
   },
 })
 

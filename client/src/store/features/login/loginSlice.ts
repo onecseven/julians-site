@@ -1,17 +1,4 @@
-import { createAction, createSlice } from "@reduxjs/toolkit"
-
-/**
- * TODO: Respond to Login Failure in UI!
- * TODO: Respond to login success in UI!
- */
-
-export const POST_LOGIN =
-  createAction<{ email: string; password: string }>("login/POST_LOGIN")
-
-export const LOGIN_FAILURE = createAction<{ error: string }>("login/LOGIN_FAILURE")
-
-export const LOGIN_SUCCESS =
-  createAction<{ email: string; pwd: string; user_id: number }>("login/LOGIN_SUCCESS")
+import { createSlice } from "@reduxjs/toolkit"
 
 type initialLoginState = {
   email: string
