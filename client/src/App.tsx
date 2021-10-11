@@ -23,6 +23,8 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "25%",
     marginTop: "2%",
     textAlign: "center",
+    transition: "all 0.5s ease",
+    padding: "10px",
   },
 }))
 

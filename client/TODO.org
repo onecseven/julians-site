@@ -16,6 +16,8 @@
 ** NEW COMPONENTS
 *** TODO Sessions (server?)
 *** TODO Profile component
+*** TODO animate route transitions
+  https://www.youtube.com/watch?v=sIm1ApP5YH8
 *** TODO Free consult component, paid consult check on db 
 *** TODO Snackbar component, visible in every part of the app.
 ** Login
