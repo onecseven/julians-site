@@ -1,6 +1,17 @@
 let Sequelize = require("sequelize")
 let { sequelize } = require("../../DB")
 
+/**
+ * 
+ * @param {object} orderData
+ * @param {string} orderData.date YYYY/MM/DD
+ * @param {number} orderData.timeslot 1-6
+ * @param {string} orderData.meeting_type [YOGA/ENERGY/CONSULT]
+ * @param {number} orderData.user_id 
+ * @param {string} orderData.order_status [AWAITING_APPROVAL, UPCOMING, COMPLETED, CANCELED]
+
+ *  */
+
 let Order = sequelize.define(
   "orders",
   {
@@ -25,15 +36,18 @@ let Order = sequelize.define(
     user_id: {
       type: Sequelize.INTEGER,
       references: {
-        model: 'users', 
-        key: 'user_id', // 'id' refers to column name in fathers table
-     }
+        model: "users",
+        key: "user_id", // 'id' refers to column name in fathers table
+      },
+    },
+    order_status: {
+      type: Sequelize.STRING,
     },
   },
   {
     timestamps: false,
+    underscored: true,
   }
 )
-
 
 module.exports.Order = Order
