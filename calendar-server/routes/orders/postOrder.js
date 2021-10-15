@@ -1,5 +1,5 @@
-const { smtp } = require("../../email/emailer")
-const { requestApprovalEmail } = require("../../email/RequestApproval")
+const { smtp } = require("../../features/email/emailer")
+const { requestApprovalEmail } = require("../../features/email/RequestApproval")
 const express = require("express")
 const findUserById = require("../../db/models/users/findUser")
 const { postOrder } = require("../../db/models/orders/postOrder")
