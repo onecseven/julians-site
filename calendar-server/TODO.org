@@ -7,17 +7,12 @@ Julian's Calendar Server
 *** TODO create a handlePostUserErrors file
 **** TODO handle ER_DUP_ENTRY as emailExists
 ***** TODO handle emailExists in client  
-** Approving Users
-*** DONE add "approved" status to db schema
-*** TODO Create db handler for approving Users (approveUser)
-*** TODO Create a route to approve Users
 * Shared
 ** WAIT Timeslots converter to real life Timeslots
 * Unassigned
 ** WAIT confirm/decline because of Email
 ** RESEARCH dynamically import all routes from the routes folder?
 * Template for feature that touches DB
-
 ** Create snippet for template?
 ** TODO ADD TO DB schema
 ** TODO ADD TO SEQUELIZE schema
@@ -25,6 +20,11 @@ Julian's Calendar Server
 ** TODO CREATE ROUTE HANDLER
 ** TODO CREATE VIEW (we should have a similar template in the client side)
 * FINISHED
+** Approving Users
+*** DONE add "approved" status to db schema
+*** DONE Create db handler for approving Users (approveUser)
+*** DONE Create a route to approve Users
+**** DONE add the route to routes.js
 ** Order Status feature
 *** DONE Add order_status to the db schema
 *** DONE Add to the Sequelize schema

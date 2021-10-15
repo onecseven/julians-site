@@ -3,8 +3,10 @@ const declineAppt = require("./orders/approval/declineAppt.js")
 const getApptsOnDate = require("./orders/getOrdersByDate.js")
 const postOrder = require("./orders/postOrder.js")
 const updateOrderStatus = require("./orders/updateOrderStatus.js")
+const updateUserApproval = require("./users/approval/updateUserApproval.js")
 const login = require("./users/login.js")
 const postUser = require("./users/postUser.js")
+
 
 module.exports = {
   appts: {
@@ -14,6 +16,7 @@ module.exports = {
     postOrder,
     postUser,
     login,
-    updateOrderStatus
+    updateOrderStatus,
+    updateUserApproval
   },
 }

@@ -3,7 +3,7 @@ const { findUserById } = require("./findUser")
 
 const updateUserApproval = async (id) => {
   let user = await findUserById(id)
-  user.approval = true
+  user.approved = true
   return user.save()
 }
 
