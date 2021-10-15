@@ -1,5 +1,5 @@
 const express = require("express")
-const { findOrderByDate } = require("../../db/models/orders/findOrderByDate")
+const { getOrdersByDate } = require("../../db/models/orders/getOrdersByDate")
 const app = (module.exports = express())
 
 //DONE
@@ -21,7 +21,7 @@ const timeslotFormatter = (rawData) => {
 
 app.post("/appointments/ondate", (request, response) => {
   let { date } = request.body
-  findOrderByDate(date)
+  getOrdersByDate(date)
     .catch((error) => response.sendStatus(404))
     .then(( data ) => response.send({ timeslots: timeslotFormatter(data) }))
 })

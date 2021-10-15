@@ -2,18 +2,18 @@ const { Order } = require("./Orders")
 
 /**
  *
- * @param {number} id
+ * @param {date} date 
  * returns promise
  *  */
 
-function findAllOrdersByUserId(id) {
+function getOrdersByDate(date) {
   return Order.sync().then(function () {
     return Order.findAll({
       where: {
-        user_id: id
+        date
       },
     })
   })
 }
 
-module.exports.findAllOrdersByUserId = findAllOrdersByUserId
+module.exports.getOrdersByDate = getOrdersByDate

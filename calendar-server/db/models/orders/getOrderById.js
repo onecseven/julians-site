@@ -7,14 +7,14 @@ const { Order } = require("./Orders")
  * returns promise
  *  */
 
-function findOrderById(id) {
+function getOrderById(id) {
   return Order.sync().then(function () {
     return Order.findOne({
       where: {
-        id
+        order_id: id
       },
     })
   })
 }
 
-module.exports.findOrderById = findOrderById
+module.exports.getOrderById = getOrderById

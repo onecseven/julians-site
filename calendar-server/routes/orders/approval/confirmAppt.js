@@ -1,6 +1,6 @@
-const { bookAppointment } = require("../../calendar/calendar-exports");
-const { smtp } = require("../../email/emailer");
-const { createConfirmationTemplate } = require("../../email/reservation-confirmed-template-client");
+const { bookAppointment } = require("../../../calendar/calendar-exports");
+const { smtp } = require("../../../email/emailer");
+const { createConfirmationTemplate } = require("../../../email/reservation-confirmed-template-client");
 const express = require("express")
 const app = module.exports = express()
 

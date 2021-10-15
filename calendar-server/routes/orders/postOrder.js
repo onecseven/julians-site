@@ -1,8 +1,8 @@
 const { smtp } = require("../../email/emailer")
 const { requestApprovalEmail } = require("../../email/RequestApproval")
 const express = require("express")
-const { createOrder } = require("../../db/models/orders/createOrder")
 const findUserById = require("../../db/models/users/findUser")
+const { postOrder } = require("../../db/models/orders/postOrder")
 const app = (module.exports = express())
 
 /** Accepts a req.body formatted this way:
@@ -16,11 +16,11 @@ const app = (module.exports = express())
  * }
  */
 
-//DONE
+//TODO too many things happening here, refactor into more functions 
 
 app.post("/appointments", async (request, response) => {
   let { date, timeslot, meetingType, user_id } = request.body
-  const { order_id } = await createOrder({
+  const { order_id } = await postOrder({
     date,
     timeslot,
     meeting_type: meetingType,

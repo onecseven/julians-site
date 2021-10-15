@@ -2,7 +2,7 @@ const express = require("express")
 const app = (module.exports = express())
 const {
   findAllOrdersByUserId,
-} = require("../../db/models/orders/findAllOrdersByUserId")
+} = require("../db/models/orders/findAllOrdersByUserId")
 
 //DONE This is working
 
