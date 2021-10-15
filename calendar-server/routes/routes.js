@@ -1,20 +1,19 @@
-const confirmAppt = require("./appts/confirmAppt.js")
-const declineAppt = require("./appts/declineAppt.js")
-const getApptsOnDate = require("./appts/getApptsOnDate.js")
-const postAppt = require("./appts/postAppt.js")
-const testApptByUserId = require("./appts/testApptByUserId.js")
+const confirmAppt = require("./orders/approval/confirmAppt.js")
+const declineAppt = require("./orders/approval/declineAppt.js")
+const getApptsOnDate = require("./orders/getOrdersByDate.js")
+const postOrder = require("./orders/postOrder.js")
+const updateOrderStatus = require("./orders/updateOrderStatus.js")
 const login = require("./users/login.js")
 const postUser = require("./users/postUser.js")
-//how to dynamically import the rest of the routes?
 
 module.exports = {
   appts: {
     confirmAppt,
     declineAppt,
     getApptsOnDate,
-    postAppt,
-    testApptByUserId,
+    postOrder,
     postUser,
     login,
+    updateOrderStatus
   },
 }
