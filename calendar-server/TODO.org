@@ -1,17 +1,14 @@
-* Julian's Calendar Server
+Julian's Calendar Server
 * Order 
 ** order/approval routes
 *** TODO decline route does not work
-** Order Status feature
-*** DONE Add order_status to the db schema
-*** DONE Add to the Sequelize schema
-*** DONE Figure out orderStatus types
-**** [AWAITING_APPROVAL, UPCOMING, COMPLETED, CANCELED]
-*** DONE create db handlers for order status changes (orderStatusByOrderIs)
 * Users
-** TODO Move the bcrypt stuff from the routes to a setter in the User thing
+** TODO postUser.js
+*** TODO create a handlePostUserErrors file
+**** TODO handle ER_DUP_ENTRY as emailExists
+***** TODO handle emailExists in client  
 ** Approving Users
-*** TODO add "approved" status to db schema
+*** DONE add "approved" status to db schema
 *** TODO Create db handler for approving Users (approveUser)
 *** TODO Create a route to approve Users
 * Shared
@@ -19,12 +16,19 @@
 * Unassigned
 ** WAIT confirm/decline because of Email
 ** RESEARCH dynamically import all routes from the routes folder?
-
-
 * Template for feature that touches DB
+
 ** Create snippet for template?
 ** TODO ADD TO DB schema
 ** TODO ADD TO SEQUELIZE schema
 ** TODO CREATE DB HANDLER
 ** TODO CREATE ROUTE HANDLER
 ** TODO CREATE VIEW (we should have a similar template in the client side)
+* FINISHED
+** Order Status feature
+*** DONE Add order_status to the db schema
+*** DONE Add to the Sequelize schema
+*** DONE Figure out orderStatus types
+**** [AWAITING_APPROVAL, UPCOMING, COMPLETED, CANCELED]
+*** DONE create db handlers for order status changes (orderStatusByOrderIs)
+** DROP Move the bcrypt stuff from the routes to a setter in the User thing
