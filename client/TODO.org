@@ -1,30 +1,13 @@
 * JULIAN'S SITE
-** DONE  Form to make reservations:
-*** DONE Need a calendar component.
-*** DONE Once a day is chosen, then we make a call to the calendar with the chosen date
-*** DONE Then the user chooses a time (shown in buttons, localized for them) and then we send a POST appointments API call
-*** TODO Show times in user's local time, POST them in UTC. 
-** TODO Re-figure out the payment system lmao
-** DONE TEST SYSTEMS
-*** DONE write redux logic for calendar-component and the POST route "/appointments/ondate/"
-*** DONE write component that displays the timeslot logic
-**** DONE write constant file with both timeslot number and a date object specifying the time. (lets do 2pm to 5pm)
-*** DONE write redux logic for login component and the POST route "/user/login"  console.log(date)
-**** TODO handle error states from  /user/login
-*** DONE  write redux logic for register component and the POST route "/user/create"
-**** TODO handle error states from createUser
 ** NEW COMPONENTS
-*** TODO Sessions (server?)
 *** TODO Profile component
-*** TODO animate route transitions
-  https://www.youtube.com/watch?v=sIm1ApP5YH8
-*** TODO Free consult component, paid consult check on db 
+**** TODO Order List component
+**** TODO Moderator Profile Component
+*** TODO Free consult component for book  
 *** TODO Snackbar component, visible in every part of the app.
-** Login
-*** TODO Respond to Login Failure in UI!
-*** TODO Respond to login success in UI!
 ** REGISTER
-*** TODO Make register into a square rather than a column! Use the grid website
+*** CSS
+**** TODO Make register into a square rather than a column! Use the grid website
   .options-display {
   display: grid; 
   grid-template-columns: 1fr 1fr; 
@@ -38,8 +21,37 @@
 .email { grid-area: email; }
 .password1 { grid-area: password1; }
 .password2 { grid-area: password2; }
-*** TODO Failure to register should go to the Snackbar
+*** FEATURES
+**** TODO Failure to register should go to the Snackbar
 ** BOOK 
-*** TODO IMPLEMENT ERROR in Book
-*** TODO Give title more room
-*** TODO Button stuck to bottom of the papier
+*** CSS
+**** TODO Give title more room
+**** TODO Button stuck to bottom of the papier
+*** FEATURES
+**** TODO IMPLEMENT ERROR in Book
+**** TODO Show times in user's local time, POST them in UTC. 
+**** TODO Only shows free consult to non-logged in and non-approved.
+* LOW PRIORITY
+** TODO Sessions (server?)
+** TODO Re-figure out the payment system lmao
+** TODO animate route transitions
+  https://www.youtube.com/watch?v=sIm1ApP5YH8
+** Login
+*** Snackbar waiting Room
+**** WAIT Respond to Login Failure in UI!
+**** WAIT Respond to login success in UI!
+
+* UNASSIGNED
+** TODO handle error states from  /user/login
+** TODO handle error states from createUser
+* FINISHED
+** DONE  Form to make reservations:
+*** DONE Need a calendar component.
+*** DONE Once a day is chosen, then we make a call to the calendar with the chosen date
+*** DONE Then the user chooses a time (shown in buttons, localized for them) and then we send a POST appointments API call
+** DONE TEST SYSTEMS
+*** DONE write redux logic for calendar-component and the POST route "/appointments/ondate/"
+*** DONE write component that displays the timeslot logic
+**** DONE write constant file with both timeslot number and a date object specifying the time. (lets do 2pm to 5pm)
+*** DONE write redux logic for login component and the POST route "/user/login"  console.log(date)
+*** DONE  write redux logic for register component and the POST route "/user/create"
