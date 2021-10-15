@@ -1,7 +1,6 @@
 let { sequelize } = require("../../DB")
 let Sequelize = require("sequelize")
 
-
 const User = sequelize.define(
   "users",
   {
@@ -23,11 +22,14 @@ const User = sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
+    approved: {
+      type: Sequelize.BOOLEAN,
+    },
   },
   {
     timestamps: false,
+    underscored: true,
   }
 )
-
 
 module.exports.User = User

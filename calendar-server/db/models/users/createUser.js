@@ -11,11 +11,12 @@ const saltRounds = 12
  *  */
 
 function createUser({ name, email, password }) {
-  return User.sync().then(function () {
+  return bcrypt.hash(password, 12).then((hash) => {
     return User.create({
       name,
       email,
-      password,
+      password: hash,
+      approved: false,
     })
   })
 }
