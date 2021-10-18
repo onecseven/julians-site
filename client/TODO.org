@@ -1,5 +1,6 @@
 * JULIAN'S SITE
 ** NEW COMPONENTS
+*** TODO Snackbar component, visible in every part of the app.
 *** TODO Profile component
 **** TODO Order List component
 **** TODO Moderator Profile Component
@@ -8,9 +9,6 @@
   + Approve this user button
   + Order List
   + Email
-  + Name 
-*** TODO Free consult component for book  
-*** TODO Snackbar component, visible in every part of the app.
 ** REGISTER
 *** CSS
 **** TODO Make register into a square rather than a column! Use the grid website
@@ -37,6 +35,9 @@
 **** TODO IMPLEMENT ERROR in Book
 **** TODO Show times in user's local time, POST them in UTC. 
 **** TODO Only shows free consult to non-logged in and non-approved.
+** SERVICES
+*** TODO write code to only show the yoga/energy if you've been approved
+
 * LOW PRIORITY
 ** TODO Sessions (server?)
 ** TODO Re-figure out the payment system lmao
@@ -50,7 +51,9 @@
 * UNASSIGNED
 ** TODO handle error states from  /user/login
 ** TODO handle error states from createUser
-*  FINISHED
+* FINISHED
+** DONE Free consult component for book  
+
 ** DONE  Form to make reservations:
 *** DONE Need a calendar component.
 *** DONE Once a day is chosen, then we make a call to the calendar with the chosen date
