@@ -2,6 +2,10 @@ Julian's Calendar Server
 * Order 
 ** order/approval routes
 *** TODO decline route does not work
+** all order by id feature
+*** DONE CREATE DB HANDLER
+*** DONE CREATE ROUTE HANDLER
+*** NEXT CREATE VIEW (we should have a similar template in the client side)
 * Users
 ** TODO postUser.js
 *** TODO create a handlePostUserErrors file
