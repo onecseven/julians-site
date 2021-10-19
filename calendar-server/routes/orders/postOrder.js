@@ -1,7 +1,5 @@
-const { smtp } = require("../../features/email/emailer")
-const { requestApprovalEmail } = require("../../features/email/RequestApproval")
+const { sendApprovalEmail } = require("../../features/email/RequestApproval")
 const express = require("express")
-const findUserById = require("../../db/models/users/findUser")
 const { postOrder } = require("../../db/models/orders/postOrder")
 const app = (module.exports = express())
 
@@ -16,28 +14,21 @@ const app = (module.exports = express())
  * }
  */
 
-//TODO too many things happening here, refactor into more functions 
+//TODO handle error
 
 app.post("/appointments", async (request, response) => {
   let { date, timeslot, meetingType, user_id } = request.body
-  const { order_id } = await postOrder({
+  postOrder({
     date,
     timeslot,
     meeting_type: meetingType,
     user_id,
   })
-  let { name, email } = findUserById(user_id)
-  let emailTemplate = requestApprovalEmail({
-    clientEmail: email,
-    clientName: name,
-    date: date,
-    meetingType,
-    _id: order_id,
+  .then(({ order_id }) => {
+    sendApprovalEmail(user_id, date, meetingType, timeslot, order_id)
+      .then((e) => response.sendStatus(200))
+      .catch((e) => response.send({ error: "EMAIL_ERROR" }))
+    return null
   })
-  try {
-    await smtp.sendMail(emailTemplate)
-    response.status(200).send()
-  } catch (e) {
-    response.status(500).send(e)
-  }
+  .catch((e) => response.send({ error: "DB_ERROR" }))
 })
