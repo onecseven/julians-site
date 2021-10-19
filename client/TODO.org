@@ -13,22 +13,9 @@
   + Email
 ** REGISTER
 *** CSS
-**** TODO Make register into a square rather than a column! Use the grid website
-  .options-display {
-  display: grid; 
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: 1fr 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "name email"
-    "password1 password2"; 
-}
-.name { grid-area: name; }
-.email { grid-area: email; }
-.password1 { grid-area: password1; }
-.password2 { grid-area: password2; }
+**** TODO Make register into a square rather than a column! Use the mui stack component
 *** FEATURES
-**** TODO Failure to register should go to the Snackbar
+**** TODO Failure to register should go to the Snackbar or an error above the form (that seem slike the standar)
 ** BOOK 
 *** CSS
 **** TODO Give title more room

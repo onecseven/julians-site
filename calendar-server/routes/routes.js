@@ -6,6 +6,7 @@ const updateOrderStatus = require("./orders/updateOrderStatus.js")
 const updateUserApproval = require("./users/approval/updateUserApproval.js")
 const login = require("./users/login.js")
 const postUser = require("./users/postUser.js")
+const getAllOrdersByUserId = require("./orders/getAllOrdersByID.js")
 
 
 module.exports = {
@@ -17,6 +18,7 @@ module.exports = {
     postUser,
     login,
     updateOrderStatus,
-    updateUserApproval
+    updateUserApproval,
+    getAllOrdersByUserId
   },
 }
