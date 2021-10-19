@@ -1,6 +1,8 @@
 * JULIAN'S SITE
 ** NEW COMPONENTS
-*** TODO Snackbar component, visible in every part of the app.
+*** DONE Snackbar component, visible in every part of the app.
+**** DONE Snackbar actions
+  state.ui.snackbar
 *** TODO Profile component
 **** TODO Order List component
 **** TODO Moderator Profile Component

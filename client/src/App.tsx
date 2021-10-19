@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { hot } from "react-hot-loader"
+import { hot } from "react-hot-loader/root"
 import { Provider } from "react-redux"
 import { Navbar } from "./components/Navbar"
 import { store } from "./store/store"
@@ -13,6 +13,7 @@ import { makeStyles, Paper } from "@material-ui/core"
 import { Login } from "./routes/Login"
 import { Register } from "./routes/Register"
 import { Test } from "./routes/Test"
+import { SnackbarArea } from "./routes/SnackbarArea"
 
 const useStyles = makeStyles((theme) => ({
   papier: {
@@ -46,9 +47,10 @@ const App = () => {
             <Test path="test" />
           </Router>
         </Paper>
+        <SnackbarArea/>
       </Provider>
     </div>
   )
 }
 
-export default hot(module)(App)
+export default hot(App)
