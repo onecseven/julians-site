@@ -1,0 +1,19 @@
+.ordermember {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+}
+
+.Title { grid-area: 1 / 1 / 2 / 2; }
+
+.meetingType { grid-area: 1 / 1 / 2 / 2; }
+
+.orderId { grid-area: 2 / 1 / 3 / 2; }
+
+.date { grid-area: 1 / 3 / 2 / 4; }
+
+.timeslot { grid-area: 2 / 3 / 3 / 4; }
+
+.status { grid-area: 1 / 2 / 3 / 3; }
