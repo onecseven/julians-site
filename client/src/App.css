@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 body {
   margin: 1rem;
   background-size: cover;
   text-align: center;
   background-image: url("../public/Background2.jpg");
+  font-family: 'Roboto', sans-serif;
 }
 
 .calendar > child {
