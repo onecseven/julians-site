@@ -43,6 +43,6 @@ export const SnackbarArea = () => {
       </div>
     )
   } else if (!open) {
-    return <h1>not open</h1>
+    return null
   }
 }

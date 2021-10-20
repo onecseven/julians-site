@@ -15,7 +15,7 @@ import { Register } from "./routes/Register"
 import { Test } from "./routes/Test"
 import { SnackbarArea } from "./routes/SnackbarArea"
 import { Paper } from "@mui/material"
-
+import { OrderList } from "./components/Profile/OrderList"
 
 // const useStyles = makeStyles((theme) => ({
 //   papier: {
@@ -32,23 +32,23 @@ import { Paper } from "@mui/material"
 // }))
 
 const App = () => {
-
   return (
     <div className="App">
       <Provider store={store}>
         <Navbar />
         <Paper elevation={3} className={"Gay"}>
           <Router>
+            <OrderList path="/" />
             <Contact path="contact" />
             <About path="about" />
             <Services path="services" />
             <Book path="book/:service" />
-            <Login path="login/*"/>
+            <Login path="login/*" />
             <Register path="register" />
             <Test path="test" />
           </Router>
         </Paper>
-        <SnackbarArea/>
+        <SnackbarArea />
       </Provider>
     </div>
   )

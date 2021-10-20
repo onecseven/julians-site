@@ -4,16 +4,12 @@
 **** DONE Snackbar actions
   state.ui.snackbar
 *** TODO Profile component
-**** TODO Order List component
-**** TODO Moderator Profile Component
-***** TODO User List Component
-****** TODO User Component
-  + Approve this user button
-  + Order List
-  + Email
+**** TODO Greeting Part
+**** DONE Order List component
+**** DONE OrderListMember Component
 ** REGISTER
 *** CSS
-**** TODO Make register into a square rather than a column! Use the mui stack component
+**** DONE Make register into a square rather than a column! Use the mui stack component
 *** FEATURES
 **** TODO Failure to register should go to the Snackbar or an error above the form (that seem slike the standar)
 ** BOOK 
@@ -26,22 +22,24 @@
 **** TODO Only shows free consult to non-logged in and non-approved.
 ** SERVICES
 *** TODO write code to only show the yoga/energy if you've been approved
+**** TODO Otherwise only show consult.
 
 * LOW PRIORITY
 ** TODO Sessions (server?)
 ** TODO Re-figure out the payment system lmao
 ** TODO animate route transitions
   https://www.youtube.com/watch?v=sIm1ApP5YH8
-** Login
-*** Snackbar waiting Room
-**** WAIT Respond to Login Failure in UI!
-**** WAIT Respond to login success in UI!
+  
 
 * UNASSIGNED
-** TODO handle error states from  /user/login
 ** TODO handle error states from createUser
 * FINISHED
+** Login
+*** Snackbar waiting Room
+**** DONE Respond to Login Failure in UI!
+**** DONE Respond to login success in UI!
 ** DONE Free consult component for book  
+** DONE handle error states from  /user/login
 
 ** DONE  Form to make reservations:
 *** DONE Need a calendar component.
@@ -53,3 +51,9 @@
 **** DONE write constant file with both timeslot number and a date object specifying the time. (lets do 2pm to 5pm)
 *** DONE write redux logic for login component and the POST route "/user/login"  console.log(date)
 *** DONE  write redux logic for register component and the POST route "/user/create"
+** TODO Moderator Profile Component
+*** TODO User List Component
+**** TODO User Component
+  + Approve this user button
+  + Order List
+  + Email
