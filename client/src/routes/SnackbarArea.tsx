@@ -1,6 +1,6 @@
 import * as React from "react"
-import { IconButton, Snackbar } from "@material-ui/core"
-import { Close } from "@material-ui/icons"
+import { IconButton, Snackbar } from "@mui/material"
+import { Close } from "@mui/icons-material"
 import {
   useAppDispatch as useDispatch,
   useAppSelector as useSelector,

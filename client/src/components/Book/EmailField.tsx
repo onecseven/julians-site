@@ -1,32 +1,27 @@
-import { makeStyles, TextField } from "@material-ui/core"
+import { Box, TextField } from "@mui/material"
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import { setEmail } from "../../store/features/form/formSlice"
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    margin: theme.spacing(1),
-    width: "100%",
-  },
-}))
+import EmailIcon from "@mui/icons-material/Email"
 
 export const EmailField = (props) => {
   const dispatch = useDispatch()
   const [value, setValue] = useState("")
-  const classes = useStyles()
 
   return (
-    <TextField
-      id="filled-email"
-      label="Email"
-      value={value}
-      className={classes.root}
-      onChange={(event) => {
-        let newText = event.target.value
-        setValue(newText)
-        dispatch(setEmail(newText))
-      }}
-      variant="filled"
-    />
+    <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+      <EmailIcon sx={{ color: "action.active", mr: 1, my: 0.5 }} />
+      <TextField
+        id="filled-email"
+        label="Email"
+        value={value}
+        onChange={(event) => {
+          let newText = event.target.value
+          setValue(newText)
+          dispatch(setEmail(newText))
+        }}
+        variant="filled"
+      />
+    </Box>
   )
 }

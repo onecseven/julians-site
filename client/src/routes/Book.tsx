@@ -6,7 +6,7 @@ import {
 import { CalendarField } from "../components/Book/CalendarField"
 import { setMeetingType } from "../store/features/form/formSlice"
 import { TimeslotTest } from "../components/Test/TimeslotTest"
-import { Button } from "@material-ui/core"
+import { Button } from "@mui/material"
 
 const text = {
   energy: "Guided Energy Work",

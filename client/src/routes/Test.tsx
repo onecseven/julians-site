@@ -4,7 +4,7 @@ import {
   InputLabel,
   MenuItem,
   Select,
-} from "@material-ui/core"
+} from "@mui/material"
 import { makeStyles, mergeClasses } from "@material-ui/styles"
 import React, { useState } from "react"
 import { CalendarTest } from "../components/Test/calendarTest"
