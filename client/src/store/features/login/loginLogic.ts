@@ -1,7 +1,9 @@
 import { createLogic } from "redux-logic"
 import axios from "axios"
-import { POST_LOGIN } from "./loginActions"
+import { LOGIN_FAILURE, LOGIN_SUCCESS, POST_LOGIN } from "./loginActions"
 import { FakeRootState, RootState } from "../../store"
+import { SEND_NOTIF } from "../ui/uiActions"
+import { navigate } from "@reach/router"
 
 export const POST_LOGIN_LOGIC = createLogic<
   FakeRootState,
@@ -14,8 +16,7 @@ export const POST_LOGIN_LOGIC = createLogic<
     successType: "login/LOGIN_SUCCESS", // If promise resolved, dispatch this action
     failType: "login/LOGIN_FAILURE", // If promise rejected, dispatch this action
   },
-  // Declare our promise inside a process
-  process({ action }) {
+  process({ action, getState }, dispatch, done) {
     console.log("started process with action type: " + action.type)
     console.log("started process with action payload: " + action.payload)
     let { email, password } = action.payload
@@ -25,11 +26,24 @@ export const POST_LOGIN_LOGIC = createLogic<
         email,
         password,
       })
-      .then(({ data }) => ({
-        email: data.email,
-        name: data.name,
-        user_id: data.user_id,
-      }))
-      .catch((err) => err)
+      .then(({ data }) => {
+        let payload = {
+          email: data.email,
+          name: data.name,
+          user_id: data.user_id,
+        }
+        dispatch(LOGIN_SUCCESS(payload))
+        dispatch(
+          SEND_NOTIF({ message: "Login successful! Welcome " + data.name })
+        )
+        navigate("/")
+      })
+      .catch((err) => {
+        dispatch(LOGIN_FAILURE())
+        dispatch(
+          SEND_NOTIF({ message: "Error logging in.", error: "error"})
+        )
+        navigate("/login/error")
+      })
   },
 })
