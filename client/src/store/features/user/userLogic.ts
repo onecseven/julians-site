@@ -3,6 +3,8 @@ import axios from "axios"
 import { FakeRootState, RootState } from "../../store"
 import { POST_CREATE_USER, CREATE_USER_FAILURE } from "./userSlice"
 
+//it's suceeding when there's an error
+
 export const POST_REGISTER_LOGIC = createLogic<
   FakeRootState,
   ReturnType<typeof POST_CREATE_USER>["payload"]
