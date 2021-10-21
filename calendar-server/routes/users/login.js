@@ -14,9 +14,9 @@ app.post("/user/login", function (request, response) {
         if (result == true) {
           response.send(dataValues)
         } else {
-          response.sendStatus(401)
+          response.send({error: "BAD_PASSWORD"})
         }
       })
     })
-    .catch((err) => response.redirect("/user/login/badEmail"))
+    .catch((err) => response.send({error: "EMAIL_NOT_FOUND", info: err}))
 })
