@@ -12,6 +12,7 @@
 **** DONE Make register into a square rather than a column! Use the mui stack component
 *** FEATURES
 **** TODO Failure to register should go to the Snackbar or an error above the form (that seem slike the standar)
+***** TODO Steal alert from mismatched emails
 ** BOOK 
 *** CSS
 **** TODO Give title more room
@@ -19,10 +20,13 @@
 *** FEATURES
 **** TODO IMPLEMENT ERROR in Book
 **** TODO Show times in user's local time, POST them in UTC. 
-**** TODO Only shows free consult to non-logged in and non-approved.
+**** DONE Only shows free consult to non-logged in and non-approved.
+  harder than it seemed
 ** SERVICES
 *** TODO write code to only show the yoga/energy if you've been approved
 **** TODO Otherwise only show consult.
+** CALENDAR
+*** TODO make "book" button only show up when you have selected both a data and a time.
 
 * LOW PRIORITY
 ** TODO Sessions (server?)

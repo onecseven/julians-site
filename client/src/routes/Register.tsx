@@ -13,8 +13,8 @@ export const Register = (props) => {
   const [pwd, setPwd] = useState("")
   const [pwd2, setPwd2] = useState("")
   const [seeAlert, setAlert] = useState(false)
-  // let error = pwd !== pwd2
-  let error = true
+
+  let error = pwd !== pwd2
   let alert = (
     <Alert severity="warning" sx={{width: "90%", ml: 3.5}}>
       <AlertTitle>Warning</AlertTitle>
@@ -34,10 +34,12 @@ export const Register = (props) => {
           }
           event.preventDefault()
           dispatch(POST_CREATE_USER({ email, password: pwd, name }))
+          setAlert(false)
+          return
         }}
       >
         <Stack spacing={2.5}>
-          <Box>{error ? alert : null}</Box>
+          <Box>{seeAlert ? alert : null}</Box>
           <Box sx={{ display: "inline-flex" }}>
             <AccountCircle
               fontSize="large"
