@@ -6,6 +6,7 @@ type initialLoginState = {
   user_id: number
   name: string
   error: string
+  isLoggedIn: boolean
 }
 
 const initialState: initialLoginState = {
@@ -14,6 +15,7 @@ const initialState: initialLoginState = {
   user_id: null,
   name: "",
   error: "",
+  isLoggedIn: false,
 }
 
 export const loginSlice = createSlice({
@@ -27,6 +29,7 @@ export const loginSlice = createSlice({
       state.email = action.payload.email
       state.user_id = action.payload.user_id
       state.name = action.payload.name
+      state.isLoggedIn = true
     },
   },
 })

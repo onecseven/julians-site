@@ -22,7 +22,7 @@ export const POST_LOGIN_LOGIC = createLogic<
     let { email, password } = action.payload
 
     return axios
-      .post("/user/login", {
+      .post("http://localhost:3000/user/login", {
         email,
         password,
       })

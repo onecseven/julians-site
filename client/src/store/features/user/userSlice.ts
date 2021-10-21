@@ -40,7 +40,7 @@ export const userSlice = createSlice({
     CREATE_USER_FAILURE: (state, action) => {
       console.log()
       console.log("create user failure")
-      console.dir(action.payload)
+      navigate("register/error")
     },
     DUPLICATE_EMAIL: (state,action) => {
       /**FIGURE OUT HOW TO SEND TO snackbar, maybe from the logic */

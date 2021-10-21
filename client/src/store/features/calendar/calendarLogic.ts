@@ -32,7 +32,7 @@ export const POST_DATE_LOGIC = createLogic<
     console.log("started process with action payload: " + action.payload)
     let { date } = action.payload
     return axios
-      .post("/appointments/ondate", {
+      .post("http://localhost:3000/appointments/ondate", {
         date,
       })
       .then(({ data }) => ({
