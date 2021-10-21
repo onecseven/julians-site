@@ -1,17 +1,25 @@
 import React from "react"
-
+import { Greeting } from "../components/Profile/Greeting"
+import { OrderList } from "../components/Profile/OrderList"
+import { ErrorPage } from "../components/shared/Error"
+import {
+  useAppDispatch as useDispatch,
+  useAppSelector as useSelector,
+} from "../store/hooks"
 
 export const Profile = (props) => {
-/**
- * 1. check if we're logged in
- * 2. if we're logged in, render a greeteing and OrderListMember
- */
-
+  /**
+   * 1. check if we're logged in
+   * 2. if we're logged in, render a greeteing and try to load OrderList
+   * 3.
+   */
+  const { isLoggedIn, name } = useSelector((state) => state.login)
+  if (!isLoggedIn) return <ErrorPage />
   return (
-  <div>
-
-
-  </div>
+    <>
+      <Greeting name={name} />
+      <OrderList />
+    </>
   )
 }
 /**

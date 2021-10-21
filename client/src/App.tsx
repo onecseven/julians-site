@@ -16,6 +16,8 @@ import { Test } from "./routes/Test"
 import { SnackbarArea } from "./routes/SnackbarArea"
 import { Paper } from "@mui/material"
 import { OrderList } from "./components/Profile/OrderList"
+import { ErrorPage } from "./components/shared/Error"
+import { Profile } from "./routes/Profile"
 
 // const useStyles = makeStyles((theme) => ({
 //   papier: {
@@ -38,7 +40,7 @@ const App = () => {
         <Navbar />
         <Paper elevation={3} className={"Gay"}>
           <Router>
-            <OrderList path="/" />
+            <Profile path="profile" />
             <Contact path="contact" />
             <About path="about" />
             <Services path="services/*" />
@@ -46,6 +48,7 @@ const App = () => {
             <Login path="login/*" />
             <Register path="register/*" />
             <Test path="test" />
+            <ErrorPage default />
           </Router>
         </Paper>
         <SnackbarArea />
