@@ -17,7 +17,7 @@ const initialState: initialLoginState = {
   name: "",
   error: "",
   isLoggedIn: false,
-  approved: false
+  approved: false,
 }
 
 export const loginSlice = createSlice({
@@ -28,6 +28,7 @@ export const loginSlice = createSlice({
       state.error = action.payload.error
     },
     LOGIN_SUCCESS: (state, action) => {
+      let { email, user_id, name, approved } = action.payload
       state.email = action.payload.email
       state.user_id = action.payload.user_id
       state.name = action.payload.name
@@ -37,10 +38,6 @@ export const loginSlice = createSlice({
   },
 })
 
-export const {
-  LOGIN_FAILURE,
-  LOGIN_SUCCESS
-} = loginSlice.actions
-
+export const { LOGIN_FAILURE, LOGIN_SUCCESS } = loginSlice.actions
 
 export default loginSlice.reducer

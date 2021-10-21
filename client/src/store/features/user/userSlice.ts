@@ -33,7 +33,6 @@ export const userSlice = createSlice({
     POST_CREATE_USER: (state, action) => {},
     CREATE_USER_SUCCESS: (state, action) => {
       console.log("create user success")
-      console.dir(action.payload)
       navigate("/")
 
     },

@@ -1,12 +1,41 @@
 import React, { useState } from "react"
-import { Link } from "@reach/router";
+import { Link } from "@reach/router"
 import "./navbar.scss"
+import {
+  useAppDispatch as useDispatch,
+  useAppSelector as useSelector,
+} from "../store/hooks"
+
+const nonLoggedInElement = (hamburgerClick) => (
+  <>
+    <li className="nav-item">
+      <Link to="login" className="nav-link" onClick={hamburgerClick}>
+        Login
+      </Link>
+    </li>
+    <li className="nav-item">
+      <Link to="register" className="nav-link" onClick={hamburgerClick}>
+        Register
+      </Link>
+    </li>
+  </>
+)
+
+const profile = (hamburgerClick) => (
+  <li className="nav-item">
+    <Link to="profile" className="nav-link" onClick={hamburgerClick}>
+      Profile
+    </Link>
+  </li>
+)
 
 export const Navbar = () => {
   const [isActive, toggleActive] = useState(false)
   let hamburgerClick = () => {
-      toggleActive(!isActive)
+    toggleActive(!isActive)
   }
+  const { isLoggedIn, name } = useSelector((state) => state.login)
+
   return (
     <header className="header">
       <nav className="navbar">
@@ -19,17 +48,7 @@ export const Navbar = () => {
               Book an appointment
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="login" className="nav-link" onClick={hamburgerClick}>
-              Login
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="register" className="nav-link" onClick={hamburgerClick}>
-              Register
-            </Link>
-          </li>
-
+          {isLoggedIn ? profile(hamburgerClick) : null}
           <li className="nav-item">
             <Link to="about" className="nav-link" onClick={hamburgerClick}>
               About
@@ -40,8 +59,19 @@ export const Navbar = () => {
               Contact
             </Link>
           </li>
+          {isLoggedIn ? (
+            <>
+              <li className="nav-item"></li>
+              <li className="nav-item-logged">{"Welcome Back, " + name}</li>
+            </>
+          ) : (
+            nonLoggedInElement(hamburgerClick)
+          )}
         </ul>
-        <div className={`hamburger ${isActive ? "active" : ""}`} onClick={hamburgerClick}>
+        <div
+          className={`hamburger ${isActive ? "active" : ""}`}
+          onClick={hamburgerClick}
+        >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>

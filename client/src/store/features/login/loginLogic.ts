@@ -12,9 +12,7 @@ export const POST_LOGIN_LOGIC = createLogic<
   type: "login/POST_LOGIN", // Respond to actions of this type
   latest: true, // Only provide the latest response if fired many times
   processOptions: {
-    dispatchReturn: true, // Automatically dispatch the actions below from the resolved/rejected promise
-    successType: "login/LOGIN_SUCCESS", // If promise resolved, dispatch this action
-    failType: "login/LOGIN_FAILURE", // If promise rejected, dispatch this action
+    dispatchMultiple: true,
   },
   process({ action, getState }, dispatch, done) {
     console.log("started process with action type: " + action.type)
@@ -31,7 +29,7 @@ export const POST_LOGIN_LOGIC = createLogic<
           email: data.email,
           name: data.name,
           user_id: data.user_id,
-          approved: data.approved
+          approved: data.approved,
         }
         dispatch(LOGIN_SUCCESS(payload))
         dispatch(
@@ -39,11 +37,9 @@ export const POST_LOGIN_LOGIC = createLogic<
         )
         navigate("/")
       })
-      .catch((err) => { 
+      .catch((err) => {
         dispatch(LOGIN_FAILURE())
-        dispatch(
-          SEND_NOTIF({ message: "Error logging in.", error: "error"})
-        )
+        dispatch(SEND_NOTIF({ message: "Error logging in.", error: "error" }))
         navigate("/login/error")
       })
   },

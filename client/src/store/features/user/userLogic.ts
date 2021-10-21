@@ -1,7 +1,13 @@
 import { createLogic } from "redux-logic"
 import axios from "axios"
 import { FakeRootState, RootState } from "../../store"
-import { POST_CREATE_USER, CREATE_USER_FAILURE, CREATE_USER_SUCCESS } from "./userSlice"
+import {
+  POST_CREATE_USER,
+  CREATE_USER_FAILURE,
+  CREATE_USER_SUCCESS,
+} from "./userSlice"
+import { LOGIN_SUCCESS } from "../login/loginActions"
+import { navigate } from "@reach/router"
 
 //it's suceeding when there's an error
 
@@ -25,13 +31,15 @@ export const POST_REGISTER_LOGIC = createLogic<
         password,
         name,
       })
-      .then(({data}) => {
+      .then(({ data }) => {
         console.log(data)
         console.log(data.error)
         if (data.error || data.linenumber) {
           dispatch(CREATE_USER_FAILURE(data))
         } else {
-          dispatch(CREATE_USER_SUCCESS(data))
+          dispatch(CREATE_USER_SUCCESS())
+          dispatch(LOGIN_SUCCESS(data))
+          navigate("/")
         }
       })
   },

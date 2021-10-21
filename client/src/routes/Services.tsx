@@ -1,5 +1,5 @@
 import { makeStyles } from "@mui/material/styles"
-  import { Button, Divider } from "@mui/material"
+import { Button, Divider } from "@mui/material"
 import { LoggedInServices } from "../components/Book/LoggedInServices"
 
 import {
@@ -11,7 +11,7 @@ import React from "react"
 import { Consult } from "../components/Book/Consult"
 
 export const Services = (props) => {
-  const isLoggedIn = useSelector(state => state.login.isLoggedIn)
-  if (isLoggedIn) return <LoggedInServices/>
-  else return <Consult/>
+  const { isLoggedIn, approved } = useSelector((state) => state.login)
+  if (isLoggedIn && approved) return <LoggedInServices />
+  else return <Consult />
 }
