@@ -10,7 +10,6 @@ const getAllOrdersByUserId = require("./orders/getAllOrdersByID.js")
 
 
 module.exports = {
-  appts: {
     confirmAppt,
     declineAppt,
     getApptsOnDate,
@@ -20,5 +19,4 @@ module.exports = {
     updateOrderStatus,
     updateUserApproval,
     getAllOrdersByUserId
-  },
 }
