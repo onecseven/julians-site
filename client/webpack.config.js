@@ -44,8 +44,8 @@ module.exports = (env, argv) => {
     },
     devServer: {
       contentBase: path.join(__dirname, "public/"),
-      port: 3000,
-      publicPath: "http://localhost:3000",
+      port: 3001,
+      publicPath: "http://localhost:3001",
       hotOnly: true,
     },
     plugins,

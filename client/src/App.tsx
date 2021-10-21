@@ -7,7 +7,7 @@ import "./App.css"
 import { Router, Link } from "@reach/router"
 import { Contact } from "./routes/Contact"
 import { About } from "./routes/About"
-import { OptionsField as Services } from "./routes/Services"
+import { Services } from "./routes/Services"
 import { Book } from "./routes/Book"
 import { makeStyles } from "@mui/styles"
 import { Login } from "./routes/Login"
@@ -41,10 +41,10 @@ const App = () => {
             <OrderList path="/" />
             <Contact path="contact" />
             <About path="about" />
-            <Services path="services" />
+            <Services path="services/*" />
             <Book path="book/:service" />
             <Login path="login/*" />
-            <Register path="register" />
+            <Register path="register/*" />
             <Test path="test" />
           </Router>
         </Paper>

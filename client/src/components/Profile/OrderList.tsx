@@ -20,7 +20,7 @@ export const OrderList = (props) => {
       setIsLoading(true)
 
       try {
-        const result = await axios(`/appointments/${user_id}`)
+        const result = await axios(`http://localhost:3000/appointments/${user_id}`)
         setData(result.data)
       } catch (error) {
         setIsError(true)
