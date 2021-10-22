@@ -1,64 +1,42 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 type initialFormState = {
-  firstName: string
-  lastName: string
-  date: Date
+  date: string
   meetingType: "YOGA" | "ENERGY"
-  email: String
   timeslot: 1 | 2 | 3 | 4 | 5 | 6
 }
 
 let initialState: initialFormState = {
-  firstName: "",
-  lastName: "",
   date: null,
   meetingType: null,
-  email: "",
-  timeslot: null
+  timeslot: null,
 }
 
 export const formSlice = createSlice({
-  name: "ui",
+  name: "form",
   initialState,
   reducers: {
-    setFirstName: (state, action) => {
-      let firstName = action.payload
-      state.firstName = firstName
-    },
-    setLastName: (state, action) => {
-      let lastName = action.payload
-      state.lastName = lastName
-    },
     setDate: (state, action) => {
-      let date = action.payload
+      let { date } = action.payload
       state.date = date
     },
     setTimeslot: (state, action) => {
-      let date = action.payload
-      state.timeslot = date
+      let { timeslot } = action.payload
+      state.timeslot = timeslot
     },
     setMeetingType: (state, action) => {
-      let meetingType = action.payload
+      let { meetingType } = action.payload
       state.meetingType = meetingType
     },
-    clearUI: (state, action) => {
-      state = initialState
+    APPT_SUCCESS: () => {
     },
-    setEmail: (state, action) => {
-      state.email = action.payload
-    },
+    APPT_FAILURE: () => {
+
+    }
   },
 })
 
-export const {
-  clearUI,
-  setFirstName,
-  setLastName,
-  setEmail,
-  setDate,
-  setMeetingType,
-  setTimeslot
-} = formSlice.actions
+export const { setDate, setMeetingType, setTimeslot } =
+  formSlice.actions
 
 export default formSlice.reducer

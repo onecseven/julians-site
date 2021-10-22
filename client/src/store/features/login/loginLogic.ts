@@ -31,6 +31,10 @@ export const POST_LOGIN_LOGIC = createLogic<
           user_id: data.user_id,
           approved: data.approved,
         }
+        if (data.error) {
+          throw new Error(data.error)
+          return
+        }
         dispatch(LOGIN_SUCCESS(payload))
         dispatch(
           SEND_NOTIF({ message: "Login successful! Welcome " + data.name })

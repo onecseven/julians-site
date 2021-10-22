@@ -5,8 +5,9 @@ import {
 } from "../store/hooks"
 import { CalendarField } from "../components/Book/CalendarField"
 import { setMeetingType } from "../store/features/form/formSlice"
-import { TimeslotTest } from "../components/Test/TimeslotTest"
 import { Button } from "@mui/material"
+import { Timeslot } from "../components/Book/Timeslot"
+import { POST_APPT } from "../store/features/form/formActions"
 
 const text = {
   energy: "Guided Energy Work",
@@ -16,19 +17,27 @@ const text = {
 export const Book = (props) => {
   let { service } = props
   const dispatch = useDispatch()
-  dispatch(setMeetingType(service.toUpperCase()))
-  // if (error) ?
+  const { timeslot, date } = useSelector((state) => state.form)
+  const { user_id } = useSelector((state) => state.login)
+  const handleChange = (event) => {
+    event.preventDefault()
+    if (timeslot && date && user_id) {
+      dispatch(POST_APPT({ timeslot, date, meetingType: service.toUpperCase(), user_id }))
+    }
+  }
   return (
     <>
       <h2>Booking {text[service]}</h2>
       <CalendarField />
-      <TimeslotTest />
+      <Timeslot />
       <Button
         size="large"
-        variant="outlined"
+        variant="contained"
         type="submit"
         color="primary"
         id="form_button"
+        onClick={handleChange}
+        disabled={timeslot ? false : true}
       >
         Book!
       </Button>
