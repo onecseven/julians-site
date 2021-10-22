@@ -1,12 +1,7 @@
 * JULIAN'S SITE
-** NEW COMPONENTS
-*** DONE Snackbar component, visible in every part of the app.
-**** DONE Snackbar actions
-  state.ui.snackbar
-*** DONE Profile component
-**** DONE Greeting Part
-**** DONE Order List component
-**** DONE OrderListMember Component
+** PROFILE
+*** TODO Move OrderList to DataGrid
+  https://mui.com/components/data-grid/
 ** REGISTER
 *** CSS
 **** DONE Make register into a square rather than a column! Use the mui stack component
@@ -24,19 +19,12 @@
 **** DONE Only shows free consult to non-logged in and non-approved.
   harder than it seemed
 **** DONE actually make it book
-** SERVICES
-*** DONE write code to only show the yoga/energy if you've been approved
-**** DONE Otherwise only show consult.
-** CALENDAR
-*** DONE make "book" button only show up when you have selected both a data and a time.
 ** ERROR
-*** TODO Make error read off of state.ui.error, and if nothing is there, just give a generic one
 * LOW PRIORITY
 ** TODO Sessions (server?)
 ** TODO Re-figure out the payment system lmao
 ** TODO animate route transitions
-  https://www.youtube.com/watch?v=sIm1ApP5YH8
-  
+  https://www.youtube.com/watch?v=sIm1ApP5YH8  
 * UNASSIGNED
 ** TODO handle error states from createUser
 * FINISHED
@@ -57,6 +45,20 @@
 **** DONE write constant file with both timeslot number and a date object specifying the time. (lets do 2pm to 5pm)
 *** DONE write redux logic for login component and the POST route "/user/login"  console.log(date)
 *** DONE  write redux logic for register component and the POST route "/user/create"
+** DONE NEW COMPONENTS
+*** DONE Snackbar component, visible in every part of the app.
+**** DONE Snackbar actions
+  state.ui.snackbar
+*** DONE Profile component
+**** DONE Greeting Part
+**** DONE Order List component
+**** DONE OrderListMember Component
+*** DONE Make error read off of state.ui.error, and if nothing is there, just give a generic one
+** SERVICES
+*** DONE write code to only show the yoga/energy if you've been approved
+**** DONE Otherwise only show consult.
+** CALENDAR
+*** DONE make "book" button only show up when you have selected both a data and a time.
 ** TODO Moderator Profile Component
 *** TODO User List Component
 **** TODO User Component

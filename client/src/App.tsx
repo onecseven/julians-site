@@ -49,6 +49,7 @@ const App = () => {
             <Register path="register/*" />
             <Test path="test" />
             <ErrorPage default />
+            <ErrorPage path="error" />
           </Router>
         </Paper>
         <SnackbarArea />
