@@ -3,8 +3,8 @@
 *** DONE Snackbar component, visible in every part of the app.
 **** DONE Snackbar actions
   state.ui.snackbar
-*** TODO Profile component
-**** TODO Greeting Part
+*** DONE Profile component
+**** DONE Greeting Part
 **** DONE Order List component
 **** DONE OrderListMember Component
 ** REGISTER
@@ -19,22 +19,24 @@
 **** TODO Button stuck to bottom of the papier
 *** FEATURES
 **** TODO IMPLEMENT ERROR in Book
+**** TODO booking confirmed component
 **** TODO Show times in user's local time, POST them in UTC. 
 **** DONE Only shows free consult to non-logged in and non-approved.
   harder than it seemed
+**** DONE actually make it book
 ** SERVICES
-*** TODO write code to only show the yoga/energy if you've been approved
-**** TODO Otherwise only show consult.
+*** DONE write code to only show the yoga/energy if you've been approved
+**** DONE Otherwise only show consult.
 ** CALENDAR
-*** TODO make "book" button only show up when you have selected both a data and a time.
-
+*** DONE make "book" button only show up when you have selected both a data and a time.
+** ERROR
+*** TODO Make error read off of state.ui.error, and if nothing is there, just give a generic one
 * LOW PRIORITY
 ** TODO Sessions (server?)
 ** TODO Re-figure out the payment system lmao
 ** TODO animate route transitions
   https://www.youtube.com/watch?v=sIm1ApP5YH8
   
-
 * UNASSIGNED
 ** TODO handle error states from createUser
 * FINISHED
