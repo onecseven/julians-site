@@ -31,7 +31,6 @@ export const formSlice = createSlice({
     APPT_SUCCESS: () => {
     },
     APPT_FAILURE: () => {
-
     }
   },
 })

@@ -1,7 +1,7 @@
 import { createLogic } from "redux-logic"
 import axios from "axios"
 import { FakeRootState, RootState } from "../../store"
-import { SEND_NOTIF } from "../ui/uiActions"
+import { ERROR_APPT, SEND_NOTIF } from "../ui/uiActions"
 import { navigate } from "@reach/router"
 import { APPT_FAILURE, APPT_SUCCESS, POST_APPT } from "./formActions"
 
@@ -25,13 +25,14 @@ export const POST_APPT_LOGIC = createLogic<
         user_id,
       })
       .then(({ data }) => {
-        dispatch(APPT_SUCCESS({}))
+        dispatch(APPT_SUCCESS({ order_id: data.order_id }))
         dispatch(SEND_NOTIF({ message: "Booking successful!" }))
+        // navigate("confirmation/" + data.order_id)
         navigate("profile")
       })
       .catch((err) => {
         dispatch(APPT_FAILURE({}))
-        dispatch(SEND_NOTIF({ message: "Error booking", error: "error" }))
+        dispatch(ERROR_APPT())
         navigate("error")
       })
   },

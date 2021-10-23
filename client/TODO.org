@@ -6,15 +6,15 @@
 *** CSS
 **** DONE Make register into a square rather than a column! Use the mui stack component
 *** FEATURES
-**** TODO Failure to register should go to the Snackbar or an error above the form (that seem slike the standar)
-***** TODO Steal alert from mismatched emails
+**** NEXT Failure to register should go to the Snackbar or an error above the form (that seem slike the standar)
+***** NEXT Steal alert from mismatched emails
 ** BOOK 
 *** CSS
 **** TODO Give title more room
 **** TODO Button stuck to bottom of the papier
 *** FEATURES
-**** TODO IMPLEMENT ERROR in Book
-**** TODO booking confirmed component
+**** DONE IMPLEMENT ERROR in Book
+**** WAIT booking confirmed component
 **** TODO Show times in user's local time, POST them in UTC. 
 **** DONE Only shows free consult to non-logged in and non-approved.
   harder than it seemed

@@ -1,19 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { APPT_FAILURE } from "../form/formActions"
 
 type snackbarStatus = "success" | "info" | "warning" | "error"
 
 type initialUiState = {
+  error: string
   snackbar: {
     message: string
-    error: snackbarStatus
     open: boolean
   }
 }
 
 const initialState: initialUiState = {
+  error: null,
   snackbar: {
     message: null,
-    error: null,
     open: false,
   },
 }
@@ -30,6 +31,12 @@ export const uiSlice = createSlice({
       state.snackbar.message = message
       state.snackbar.open = true
     },
+    ERROR_DATE: (state, action) => {
+      state.error = "There's been an error with the appointments server."
+    },
+    ERROR_APPT: (state, action) => {
+      state.error = "There's been an error with the appointments server."
+    }
   },
 })
 
