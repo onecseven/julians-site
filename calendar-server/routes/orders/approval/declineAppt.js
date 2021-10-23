@@ -1,15 +1,14 @@
 const express = require("express")
-const app = module.exports = express()
-//WAITING Switch to sql (waiting email)
+const app = (module.exports = express())
+const {
+  destroyOrderById,
+} = require("../../../db/models/orders/destroyOrderById")
 
-
-app.get("/appointment/:id/decline", async (request, response) => {
+app.get("/appointments/:id/decline", async (request, response) => {
   try {
-    const food = await CalendarModel.findByIdAndDelete(request.params.id);
-    if (!food)
-      response.status(404).send("No item found");
-    response.status(200).send();
+    const food = await destroyOrderById(request.params.id)
+    response.status(200).send("all good")
   } catch (error) {
-    response.status(500).send(error);
+    response.status(500).send(error)
   }
-});
+})

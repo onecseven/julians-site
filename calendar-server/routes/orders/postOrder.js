@@ -24,11 +24,11 @@ app.post("/appointments", async (request, response) => {
     meeting_type: meetingType,
     user_id,
   })
-  .then(({ order_id }) => {
-    sendApprovalEmail(user_id, date, meetingType, timeslot, order_id)
-      .then((e) => response.sendStatus(200))
-      .catch((e) => response.send({ error: "EMAIL_ERROR" }))
-    return null
-  })
-  .catch((e) => response.send({ error: "DB_ERROR" }))
+    .then(({ order_id }) => {
+      sendApprovalEmail(user_id, date, meetingType, timeslot, order_id)
+        .then((e) => response.send({ order_id }))
+        .catch((e) => response.send({ error: "EMAIL_ERROR" }))
+      return null
+    })
+    .catch((e) => response.send({ error: "DB_ERROR" }))
 })
