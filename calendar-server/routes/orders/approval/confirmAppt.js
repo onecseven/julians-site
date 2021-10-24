@@ -8,19 +8,40 @@ const {
 } = require("../../../db/models/orders/updateOrderStatus")
 const constants = require("../../../constants")
 
-app.get("/appointments/:id/confirm", async (request, response) => {
-  let { id } = request.params
+//      awaiting: "AWAITING_APPROVAL",
+// upcoming: "UPCOMING",
+// complete: "COMPLETED",
+// cancel: "CANCELED"
+
+let isValueInArray = (array, value) => {
+  if (array.indexOf(value) > -1) {
+    return true
+  }
+  return false
+}
+
+app.put("/appointments/:id/:status", async (request, response) => {
+  let { id, status } = request.params
+  if (
+    isValueInArray(["awaiting", "upcoming", "complete", "cancel"], status) ===
+    false
+  ) {
+    response.status(401).send("Incorrent order status.")
+    return
+  }
   try {
     const order = await updateOrderStatus(
       id,
-      constants.order.order_status.upcoming
+      constants.order.order_status[status]
     )
     let { user_id, meeting_type, date } = order
-    sendConfirmationTemplate({
-      user_id,
-      meeting_type,
-      date,
-    })
+    if (status === "upcoming") {
+      sendConfirmationTemplate({
+        user_id,
+        meeting_type,
+        date,
+      })
+    }
     response.status(200).send()
   } catch (error) {
     console.log(error)

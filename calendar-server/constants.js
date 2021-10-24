@@ -16,8 +16,8 @@ module.exports = {
     order_status: {
       awaiting: "AWAITING_APPROVAL",
       upcoming: "UPCOMING",
-      completed: "COMPLETED",
-      canceled: "CANCELED"
+      complete: "COMPLETED",
+      cancel: "CANCELED"
     }
   },
 }
