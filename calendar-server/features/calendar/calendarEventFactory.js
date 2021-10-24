@@ -1,15 +1,14 @@
-
 /**
- * 
- * @param {meetingType} meetingType 
+ *
+ * @param {meetingType} meetingType
  * @param {date} Date
  * @param {clientEmail} String
- * @returns 
+ * @returns
  */
 
 //TODO need to make the timeslot converter
 
-exports.calendarEventFactory = ({ meeting_type, date, clientEmail }) => {
+exports.calendarEventFactory = ({ meeting_type, date, email }) => {
   return {
     summary: meeting_type.toString,
     location: "",
@@ -22,7 +21,7 @@ exports.calendarEventFactory = ({ meeting_type, date, clientEmail }) => {
       dateTime: new Date(date), //this is why duration is minutes!!
       timeZone: "America/Los_Angeles",
     },
-    attendees: [{ email: clientEmail }],
+    attendees: [{ email: email }, { email: "radfairyflows@gmail.com" }],
     reminders: {
       useDefault: false,
       overrides: [

@@ -19,14 +19,12 @@
 **** DONE Only shows free consult to non-logged in and non-approved.
   harder than it seemed
 **** DONE actually make it book
-** ERROR
 * LOW PRIORITY
 ** TODO Sessions (server?)
 ** TODO Re-figure out the payment system lmao
 ** TODO animate route transitions
   https://www.youtube.com/watch?v=sIm1ApP5YH8  
 * UNASSIGNED
-** TODO handle error states from createUser
 * FINISHED
 ** Login
 *** Snackbar waiting Room
