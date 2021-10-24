@@ -6,17 +6,20 @@
  * @param {clientEmail} String
  * @returns 
  */
-exports.calendarEventFactory = ({ meetingType, date, clientEmail }) => {
+
+//TODO need to make the timeslot converter
+
+exports.calendarEventFactory = ({ meeting_type, date, clientEmail }) => {
   return {
-    summary: meetingType.toString,
+    summary: meeting_type.toString,
     location: "",
     description: "",
     start: {
-      dateTime: date.toISOString(),
+      dateTime: new Date(date),
       timeZone: "America/Los_Angeles",
     },
     end: {
-      dateTime: new Date(date.getTime() + meetingType.duration * 60000).toISOString(), //this is why duration is minutes!!
+      dateTime: new Date(date), //this is why duration is minutes!!
       timeZone: "America/Los_Angeles",
     },
     attendees: [{ email: clientEmail }],

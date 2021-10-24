@@ -7,6 +7,6 @@ const {calendarEventFactory} = require("./calendarEventFactory")
  * @param {clientEmail} String
  * @param {date} Date
  */
-exports.bookAppointment = ({meetingType, clientEmail, date}) => {
-  createAppointment(calendarEventFactory({meetingType, clientEmail, date}))
+exports.bookAppointment = ({meeting_type, clientEmail, date}) => {
+  createAppointment(calendarEventFactory({meeting_type, clientEmail, date}))
 }
