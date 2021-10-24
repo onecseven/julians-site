@@ -1,6 +1,6 @@
 import React from "react"
 import { Greeting } from "../components/Profile/Greeting"
-import { OrderList } from "../components/Profile/OrderList"
+import { OrderDataTable } from "../components/Profile/OrderDataTable"
 import { ErrorPage } from "../components/shared/Error"
 import {
   useAppDispatch as useDispatch,
@@ -18,7 +18,7 @@ export const Profile = (props) => {
   return (
     <>
       <Greeting name={name} />
-      <OrderList />
+      <OrderDataTable />
     </>
   )
 }
