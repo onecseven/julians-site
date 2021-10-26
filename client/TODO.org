@@ -1,6 +1,6 @@
 * JULIAN'S SITE
 ** PROFILE
-*** TODO Move OrderList to DataGrid
+*** DONE Move OrderList to DataGrid
   https://mui.com/components/data-grid/
 ** REGISTER
 *** CSS
