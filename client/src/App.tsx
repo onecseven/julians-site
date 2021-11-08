@@ -18,6 +18,7 @@ import { Paper } from "@mui/material"
 import { OrderList } from "./components/Profile/OrderList"
 import { ErrorPage } from "./components/shared/Error"
 import { Profile } from "./routes/Profile"
+import { Receipt } from "./components/Book/Receipt"
 
 // const useStyles = makeStyles((theme) => ({
 //   papier: {
@@ -41,6 +42,7 @@ const App = () => {
         <Paper elevation={3} className={"Gay"}>
           <Router>
             <Profile path="profile" />
+            <Receipt path="confirmation" />
             <Contact path="contact" />
             <About path="about" />
             <Services path="services/*" />

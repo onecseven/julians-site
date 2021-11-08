@@ -1,12 +1,10 @@
 * JULIAN'S SITE
 ** PROFILE
-*** DONE Move OrderList to DataGrid
-  https://mui.com/components/data-grid/
 ** REGISTER
-*** CSS
-**** DONE Make register into a square rather than a column! Use the mui stack component
 *** FEATURES
 **** NEXT Failure to register should go to the Snackbar or an error above the form (that seem slike the standar)
+***** 1. Find the register errors from the server
+***** 2. Address them here.
 ***** NEXT Steal alert from mismatched emails
 ** BOOK 
 *** CSS
@@ -15,6 +13,8 @@
 *** FEATURES
 **** DONE IMPLEMENT ERROR in Book
 **** WAIT booking confirmed component
+***** DONE Receipt.tsx
+****** TODO make receipt pretty
 **** TODO Show times in user's local time, POST them in UTC. 
 **** DONE Only shows free consult to non-logged in and non-approved.
   harder than it seemed
@@ -63,3 +63,7 @@
   + Approve this user button
   + Order List
   + Email
+*** DONE Move OrderList to DataGrid
+  https://mui.com/components/data-grid/
+*** CSS
+**** DONE Make register into a square rather than a column! Use the mui stack component

@@ -25,10 +25,11 @@ export const POST_APPT_LOGIC = createLogic<
         user_id,
       })
       .then(({ data }) => {
-        dispatch(APPT_SUCCESS({ order_id: data.order_id }))
+        dispatch(
+          APPT_SUCCESS({ order_id: data.order_id, date, timeslot, meetingType })
+        )
         dispatch(SEND_NOTIF({ message: "Booking successful!" }))
-        // navigate("confirmation/" + data.order_id)
-        navigate("profile")
+        navigate("/confirmation")
       })
       .catch((err) => {
         dispatch(APPT_FAILURE({}))

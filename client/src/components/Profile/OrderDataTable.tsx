@@ -63,10 +63,10 @@ export const OrderDataTable = () => {
           <TableHead>
             <TableRow>
               <TableCell>Order ID</TableCell>
-              <TableCell align="right">date</TableCell>
-              <TableCell align="right">timeslot</TableCell>
-              <TableCell align="right">meeting_type</TableCell>
-              <TableCell align="right">order_status</TableCell>
+              <TableCell align="right">Date</TableCell>
+              <TableCell align="right">Timeslot</TableCell>
+              <TableCell align="right">Meeting Type</TableCell>
+              <TableCell align="right">Order Status</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
