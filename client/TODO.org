@@ -19,9 +19,16 @@
 **** DONE Only shows free consult to non-logged in and non-approved.
   harder than it seemed
 **** DONE actually make it book
+**** TODO payment.tsx
 * LOW PRIORITY
 ** TODO Sessions (server?)
 ** TODO Re-figure out the payment system lmao
+*** TODO logic+action+slice for /create-checkout-session 
+*** TODO COMPONENTS
+**** TODO success_url
+**** TODO cancel_url
+*** TODO SERVER SIDE
+**** TODO 
 ** TODO animate route transitions
   https://www.youtube.com/watch?v=sIm1ApP5YH8  
 * UNASSIGNED
