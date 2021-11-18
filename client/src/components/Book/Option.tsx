@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { Button, Chip, Divider, Grid, Typography } from "@mui/material"
 import { navigate } from "@reach/router"
+import { setMeetingType } from "../../store/features/form/formSlice"
+import { useAppDispatch as useDispatch } from "../../store/hooks"
 
 type optionProps = {
   name: string
@@ -11,6 +13,11 @@ type optionProps = {
 
 export const Option = ({ name, description, duration, route }: optionProps) => {
   const [selected, setSelected] = useState(0)
+  const dispatch = useDispatch()
+  const handleBook = () => {
+    dispatch(setMeetingType(route.split("/").reverse()[0].toUpperCase())) // im so lazy
+    navigate(route)
+  }
 
   return (
     <div>
@@ -49,7 +56,7 @@ export const Option = ({ name, description, duration, route }: optionProps) => {
           variant="contained"
           color="secondary"
           size="large"
-          onClick={() => navigate(route)}
+          onClick={handleBook}
         >
           Book
         </Button>

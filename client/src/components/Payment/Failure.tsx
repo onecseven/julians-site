@@ -1,11 +1,9 @@
 import React from "react"
 
 
-export const PaymentPreview = (props) => {
+export const Failure = (props) => {
   return (
   <div>
-
-
   </div>
   )
 }

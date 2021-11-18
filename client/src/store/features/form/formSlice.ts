@@ -40,7 +40,7 @@ export const formSlice = createSlice({
       state.timeslot = timeslot
     },
     setMeetingType: (state, action) => {
-      let { meetingType } = action.payload
+      let meetingType = action.payload
       state.meetingType = meetingType
     },
     APPT_SUCCESS: (state, action) => {

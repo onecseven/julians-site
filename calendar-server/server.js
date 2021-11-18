@@ -9,12 +9,15 @@ let distPath = path.join(__dirname, "../client/dist")
 const app = express()
 app.use(express.json())
 app.use(cors())
-app.use(express.static(publicPath))
 app.use("/", express.static(distPath))
 
 for (let route in routes) {
   app.use(routes[route])
 }
+
+app.use("*", function (req, res) {
+  res.sendFile(path.resolve(distPath, "index.html"))
+})
 
 const server = app.listen(3000, () => {
   console.log("Server is running...")

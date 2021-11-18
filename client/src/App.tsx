@@ -19,6 +19,8 @@ import { OrderList } from "./components/Profile/OrderList"
 import { ErrorPage } from "./components/shared/Error"
 import { Profile } from "./routes/Profile"
 import { Receipt } from "./components/Book/Receipt"
+import { OrderPreview } from "./components/Payment/OrderPreview"
+
 
 // const useStyles = makeStyles((theme) => ({
 //   papier: {
@@ -52,6 +54,7 @@ const App = () => {
             <Test path="test" />
             <ErrorPage default />
             <ErrorPage path="error" />
+            <OrderPreview path="order-preview" />
           </Router>
         </Paper>
         <SnackbarArea />

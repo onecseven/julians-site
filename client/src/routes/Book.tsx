@@ -8,6 +8,7 @@ import { setMeetingType } from "../store/features/form/formSlice"
 import { Button } from "@mui/material"
 import { Timeslot } from "../components/Book/Timeslot"
 import { POST_APPT } from "../store/features/form/formActions"
+import { Link } from "@reach/router"
 
 const text = {
   energy: "Guided Energy Work",
@@ -21,9 +22,6 @@ export const Book = (props) => {
   const { user_id } = useSelector((state) => state.login)
   const handleChange = (event) => {
     event.preventDefault()
-    if (timeslot && date && user_id) {
-      dispatch(POST_APPT({ timeslot, date, meetingType: service.toUpperCase(), user_id }))
-    }
   }
   return (
     <>
@@ -39,8 +37,14 @@ export const Book = (props) => {
         onClick={handleChange}
         disabled={timeslot ? false : true}
       >
-        Book!
+        <Link to="/order-preview" className="nav-link">
+          Preview Order
+        </Link>
       </Button>
     </>
   )
 }
+
+// if (timeslot && date && user_id) {
+//   dispatch(POST_APPT({ timeslot, date, meetingType: service.toUpperCase(), user_id }))
+// }
