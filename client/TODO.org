@@ -9,7 +9,7 @@
 ** BOOK 
 *** CSS
 **** TODO Give title more room
-**** TODO Button stuck to bottom of the papier
+**** DONE Button stuck to bottom of the papier
 *** FEATURES
 **** DONE IMPLEMENT ERROR in Book
 **** WAIT booking confirmed component
@@ -20,6 +20,9 @@
   harder than it seemed
 **** DONE actually make it book
 **** TODO payment.tsx
+** COMPONENT - Option
+*** TODO make badges bigger
+*** TODO highlight the text or something? or give the text a white outline
 * LOW PRIORITY
 ** TODO Sessions (server?)
 ** TODO Re-figure out the payment system lmao
@@ -27,10 +30,7 @@
 *** TODO COMPONENTS
 **** TODO success_url
 **** TODO cancel_url
-*** TODO SERVER SIDE
-**** TODO 
-** TODO animate route transitions
-  https://www.youtube.com/watch?v=sIm1ApP5YH8  
+*** TODO Add Privacy policy in the footer
 * UNASSIGNED
 * FINISHED
 ** Login
