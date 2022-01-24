@@ -7,7 +7,9 @@ import {
   Alert,
   AlertTitle,
   Box,
+  InputAdornment,
 } from "@mui/material"
+import { Email, Lock } from "@mui/icons-material"
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import { POST_LOGIN } from "../store/features/login/loginActions"
@@ -24,8 +26,9 @@ export const Login = (props) => {
         There has been an issue logging in. Please try again.
       </Alert>
     ) : null
+
   return (
-    <div>
+    <>
       <form
         className="loginForm"
         onSubmit={(event) => {
@@ -33,47 +36,68 @@ export const Login = (props) => {
           dispatch(POST_LOGIN({ email, password: pwd }))
         }}
       >
-        <Box>
-          <Stack spacing={2}>
-            {alert}
-            <TextField
-              id="email"
-              label="Email"
-              value={email}
-              onChange={(event) => {
-                let newText = event.target.value
-                setEmail(newText)
-              }}
-              variant="filled"
-            />
-            <div className="br" />
-            <TextField
-              id="password"
-              type="password"
-              label="Password"
-              value={pwd}
-              onChange={(event) => {
-                let newText = event.target.value
-                setPwd(newText)
-              }}
-              variant="filled"
-            />
-            <FormControlLabel
-              control={<Checkbox />}
-              label="Keep Me Logged In"
-            />
-            <Button
-              size="large"
-              variant="outlined"
-              type="submit"
-              color="primary"
-              id="form_button"
-            >
-              Log in
-            </Button>
-          </Stack>
-        </Box>
+        <Stack spacing={2}>
+          <h1> Log in with email </h1>
+          {alert}
+          <TextField
+            id="email"
+            label="Email"
+            value={email}
+            onChange={(event) => {
+              let newText = event.target.value
+              setEmail(newText)
+            }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Email
+                    fontSize="large"
+                    sx={{ color: "action.active", mr: 1, my: 2 }}
+                  />{" "}
+                </InputAdornment>
+              ),
+            }}
+            variant="filled"
+            sx={{
+              backgroundColor: "rgba(254,252,224, 0.65)",
+            }}
+          />
+          <TextField
+            id="password"
+            type="password"
+            label="Password"
+            value={pwd}
+            onChange={(event) => {
+              let newText = event.target.value
+              setPwd(newText)
+            }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Lock
+                    fontSize="large"
+                    sx={{ color: "action.active", mr: 1, my: 2 }}
+                  />{" "}
+                </InputAdornment>
+              ),
+            }}
+            variant="filled"
+            sx={{
+              backgroundColor: "rgba(254,252,224, 0.65)",
+            }}
+          />
+          <FormControlLabel control={<Checkbox />} label="Keep Me Logged In" />
+          <Button
+            size="large"
+            variant="contained"
+            type="submit"
+            color="primary"
+            id="form_button"
+          >
+            Log in
+          </Button>
+        </Stack>
       </form>
-    </div>
+    </>
   )
 }

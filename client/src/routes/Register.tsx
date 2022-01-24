@@ -1,5 +1,13 @@
 import { AccountCircle, Email, Lock } from "@mui/icons-material"
-import { Button, TextField, Stack, Alert, AlertTitle } from "@mui/material"
+import {
+  Button,
+  TextField,
+  Stack,
+  Alert,
+  AlertTitle,
+  InputAdornment,
+  Input,
+} from "@mui/material"
 import { Box } from "@mui/system"
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
@@ -16,7 +24,7 @@ export const Register = (props) => {
 
   let error = pwd !== pwd2
   let alert = (
-    <Alert severity="warning" sx={{width: "90%", ml: 3.5}}>
+    <Alert severity="warning" sx={{ width: "90%", ml: 3.5 }}>
       <AlertTitle>Warning</AlertTitle>
       Passwords don't match.
     </Alert>
@@ -24,8 +32,9 @@ export const Register = (props) => {
   const dispatch = useDispatch()
   return (
     <div>
+      <Box>{seeAlert ? alert : null}</Box>
       <form
-        className="loginForm"
+        className="registerForm"
         onSubmit={(event) => {
           if (error) {
             setAlert(true)
@@ -38,93 +47,85 @@ export const Register = (props) => {
           return
         }}
       >
-        <Stack spacing={2.5}>
-          <Box>{seeAlert ? alert : null}</Box>
-          <Box sx={{ display: "inline-flex" }}>
-            <AccountCircle
-              fontSize="large"
-              sx={{ color: "action.active", mr: 1, my: 2 }}
-            />
-            <TextField
-              id="name"
-              label="Name"
-              value={name}
-              onChange={(event) => {
-                let newText = event.target.value
-                setName(newText)
-              }}
-              variant="filled"
-              sx={{ width: "100%" }}
-            />
-          </Box>
-          <Box sx={{ display: "inline-flex" }}>
-            <Email
-              fontSize="large"
-              sx={{ color: "action.active", mr: 1, my: 2 }}
-            />
-            <TextField
-              id="email"
-              label="Email"
-              value={email}
-              onChange={(event) => {
-                let newText = event.target.value
-                setEmail(newText)
-              }}
-              variant="filled"
-              sx={{ width: "100%" }}
-            />
-          </Box>
-          <Box sx={{ display: "inline-flex" }}>
-            <Lock
-              fontSize="large"
-              sx={{ color: "action.active", mr: 1, my: 2 }}
-            />
+        <h1 className="hache1"> Register a new account </h1>
+        <div className="name">
+          <h3>Name</h3>
+          <Input
+            margin="dense"
+            value={name}
+            onChange={(event) => {
+              let newText = event.target.value
+              setName(newText)
+            }}
+            sx={{
+              backgroundColor: "rgba(254,252,224, 0.65)",
+              width: "100%",
+              color: "black",
+            }}
+          />
+        </div>
+        <div className="email">
+          <h3>Email</h3>
+          <Input
+            id="email"
+            margin="dense"
+            value={email}
+            onChange={(event) => {
+              let newText = event.target.value
+              setEmail(newText)
+            }}
+            sx={{
+              backgroundColor: "rgba(254,252,224, 0.65)",
+              width: "100%",
+            }}
+          />
+        </div>
+        <div className="pw">
+          <h3>Password</h3>
+          <Input
+            margin="dense"
+            id="password"
+            type="password"
+            sx={{
+              backgroundColor: "rgba(254,252,224, 0.65)",
+              width: "100%",
+            }}
+            value={pwd}
+            onChange={(event) => {
+              let newText = event.target.value
+              setPwd(newText)
+            }}
+            error={error}
+          />
+        </div>
+        <div className="pw2">
+          <h3>Confirm Your Pasword</h3>
+          <Input
+            id="password2"
+            margin="dense"
+            type="password"
+            value={pwd2}
+            onChange={(event) => {
+              let newText = event.target.value
+              setPwd2(newText)
+            }}
+            error={error}
+            sx={{
+              backgroundColor: "rgba(254,252,224, 0.65)",
+            }}
+          />
+        </div>
 
-            <TextField
-              id="password"
-              type="password"
-              label="Password"
-              sx={{ width: "100%" }}
-              value={pwd}
-              onChange={(event) => {
-                let newText = event.target.value
-                setPwd(newText)
-              }}
-              error={error}
-              variant="filled"
-            />
-          </Box>
-          <Box sx={{ display: "inline-flex" }}>
-            <Lock
-              fontSize="large"
-              sx={{ color: "action.active", mr: 1, my: 2 }}
-            />
-            <TextField
-              id="password2"
-              type="password"
-              label="Confirm password"
-              sx={{ width: "100%" }}
-              value={pwd2}
-              onChange={(event) => {
-                let newText = event.target.value
-                setPwd2(newText)
-              }}
-              error={error}
-              variant="filled"
-            />
-          </Box>
-          <Box>
-            <Button
-              size="large"
-              variant="outlined"
-              type="submit"
-              color="primary"
-              id="form_button"
-            >
-              Register
-            </Button>
-          </Box>
-        </Stack>
+        <Button
+          size="large"
+          className="donezo"
+          variant="contained"
+          type="submit"
+          color="primary"
+          id="form_button"
+        >
+          Register
+        </Button>
       </form>
     </div>
   )
