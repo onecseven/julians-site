@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Raleway:wght@100;400&display=swap");
 
 body {
-  margin: 1rem;
   background-size: cover;
   text-align: center;
   background-image: url("../public/Background2.jpg");
-  font-family: 'Roboto', sans-serif;
+  font-family: "Comfortaa", cursive;
 }
 
 .calendar > child {
@@ -21,13 +20,52 @@ p.MuiTypography-body1 {
 }
 
 .loginForm {
-  max-width: 330px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  background: white;
-  padding: 20px;
-  margin-top: 30px;
+  max-width: 360px;
+  margin-left: 35%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.registerForm{
+  max-width: 360px;
+  margin-left: 35%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 2fr 2fr 2fr 2fr;
+  gap: 10px 10px;
+  grid-template-areas:
+    "hache1"
+    "name"
+    "email"
+    "pw"
+    "pw2"
+    "donezo";
+}
+
+.hache1 {
+  grid-area: hache1;
+}
+.name {
+  grid-area: name;
+  display: grid;
+}
+.email {
+  grid-area: email;
+  display: grid;
+}
+.pw {
+  grid-area: pw;
+  display: grid;
+}
+.pw2 {
+  grid-area: pw2;
+  display: grid;
+}
+.donezo {
+  grid-area: donezo;
 }
 
 .br {
@@ -41,4 +79,9 @@ p.MuiTypography-body1 {
 
 #form_button {
   margin-top: 30px;
+}
+
+.contentContainer {
+  width: 60%;
+  margin-left: 20%;
 }

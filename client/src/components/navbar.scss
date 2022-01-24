@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+
+.lorem{
+  line-height: 50px;
+  font-size: 30px;
+}
+
 html {
   font-size: 62.5%;
   font-family: "Josefin Sans", sans-serif;
@@ -19,16 +25,17 @@ a {
 }
 
 .header {
-  box-shadow: white;
+  box-shadow: black;
+  background-color: rgba(254, 252, 224, 0.65);
 }
 
 .navbar {
   display: flex;
   align-items: center;
   padding: 1rem 1.5rem;
-  background-color: transparent;
   color: white;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  border-bottom: 2px solid rgba(27, 26, 26, 0.85);
   transition: all 200ms cubic-bezier(0, 0.53, 0.85, 0.7);
   font-size: 16px;
 }
@@ -67,7 +74,7 @@ a {
   font-size: 2rem;
   font-weight: 500;
   transition: all 0.3s ease-in-out;
-  color: whitesmoke;
+  color: rgb(0, 0, 0);
 }
 
 .nav-link:hover {
@@ -76,10 +83,10 @@ a {
 
 .nav-logo {
   font-weight: 900;
-  color: whitesmoke;
+  color: rgb(7, 1, 1);
   font-size: 35px;
   padding-right: 2%;
-  border-right: 2px solid rgba(255, 255, 255, 0.15);
+  border-right: 2px solid rgba(27, 26, 26, 0.85);
   transition: all 200ms cubic-bezier(0, 0.53, 0.85, 0.7);
 }
 
