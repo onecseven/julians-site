@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button, Chip, Divider, Grid, Typography } from "@mui/material"
+import { Button, Chip, Divider, Grid, Typography, Stack } from "@mui/material"
 import { navigate } from "@reach/router"
 import { setMeetingType } from "../../store/features/form/formSlice"
 import { useAppDispatch as useDispatch } from "../../store/hooks"
@@ -34,7 +34,7 @@ export const Option = ({ name, description, duration, route }: optionProps) => {
         </Typography>
       </div>
       <Divider variant="middle" />
-      <div>
+      <Stack spacing={2.5}>
         <Typography gutterBottom variant="body1">
           Select length
         </Typography>
@@ -52,15 +52,20 @@ export const Option = ({ name, description, duration, route }: optionProps) => {
             )
           })}
         </div>
-        <Button
-          variant="contained"
-          color="secondary"
-          size="large"
-          onClick={handleBook}
-        >
-          Book
-        </Button>
-      </div>
+        <div>
+          <Button
+            variant="contained"
+            color="secondary"
+            size="large"
+            onClick={handleBook}
+            sx={{
+              marginBottom: "10px",
+            }}
+          >
+            Book
+          </Button>
+        </div>
+      </Stack>
     </div>
   )
 }

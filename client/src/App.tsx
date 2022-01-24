@@ -20,7 +20,7 @@ import { ErrorPage } from "./components/shared/Error"
 import { Profile } from "./routes/Profile"
 import { Receipt } from "./components/Book/Receipt"
 import { OrderPreview } from "./components/Payment/OrderPreview"
-
+import { Home } from "./routes/Home"
 
 // const useStyles = makeStyles((theme) => ({
 //   papier: {
@@ -41,22 +41,31 @@ const App = () => {
     <div className="App">
       <Provider store={store}>
         <Navbar />
-        <Paper elevation={3} className={"Gay"}>
-          <Router>
-            <Profile path="profile" />
-            <Receipt path="confirmation" />
-            <Contact path="contact" />
-            <About path="about" />
-            <Services path="services/*" />
-            <Book path="book/:service" />
-            <Login path="login/*" />
-            <Register path="register/*" />
-            <Test path="test" />
-            <ErrorPage default />
-            <ErrorPage path="error" />
-            <OrderPreview path="order-preview" />
-          </Router>
-        </Paper>
+        <div className="contentContainer">
+          <Paper
+            elevation={3}
+            className={"Gay"}
+            sx={{
+              backgroundColor: "rgba(254,252,224, 0.65)",
+              marginTop: '30px',
+            }}
+          >
+            <Router>
+              <Profile path="profile" />
+              <Receipt path="confirmation" />
+              <Contact path="contact" />
+              <About path="about" />
+              <Services path="services/*" />
+              <Book path="book/:service" />
+              <Login path="login/*" />
+              <Register path="register/*" />
+              <Test path="test" />
+              <Home default />
+              <ErrorPage path="error" />
+              <OrderPreview path="order-preview" />
+            </Router>
+          </Paper>
+        </div>
         <SnackbarArea />
       </Provider>
     </div>

@@ -40,7 +40,7 @@ export const Navbar = () => {
     <header className="header">
       <nav className="navbar">
         <Link to="/" className="nav-logo">
-          Julian
+          radfairyflows
         </Link>
         <ul className={`nav-menu ${isActive ? "active" : ""}`}>
           <li className="nav-item">
